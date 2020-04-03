@@ -9,7 +9,6 @@ import json, random
 
 
 
-
 '''This is the JSON format **************************
 
 ***************************for the breakfast at the dining'''
@@ -1158,9 +1157,11 @@ dining_dinner = '''
 }
 '''
 
-
+def getfoodName():
 # **********************      Extracting the required item from the JSON format      ********************************
-ranNum = random.randint(0,2)
-data= json.loads(dining_dinner)
-mondayList = data["dinner"][0]["monday"][ranNum]
-print(mondayList)
+    ranNum = random.randint(0,10)
+    data= json.loads(dining_dinner)
+
+# getting the name of the food and passing it to the api for image 
+    name = data["dinner"][0]["monday"][ranNum]["title"]
+    return name
