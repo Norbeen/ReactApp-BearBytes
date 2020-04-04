@@ -1215,7 +1215,7 @@ def title_list(food_time, num, day, title, calories):
     elif food_time == "launch":
         data= json.loads(dining_launch)
         list_size= len(data[food_time][num][day])
-    elif food_time+ "dinner":
+    elif food_time =="dinner":
         data= json.loads(dining_dinner)
         list_size= len(data[food_time][num][day])
         
