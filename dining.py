@@ -1157,11 +1157,164 @@ dining_dinner = '''
 }
 '''
 
-def getfoodName():
-# **********************      Extracting the required item from the JSON format      ********************************
-    ranNum = random.randint(0,10)
-    data= json.loads(dining_dinner)
 
-# getting the name of the food and passing it to the api for image 
-    name = data["dinner"][0]["monday"][ranNum]["title"]
-    return name
+# **********************      Extracting the required item from the JSON format      ********************************
+
+# loading data from the json file using json loads
+
+# data= json.loads(dining_breakfast)
+
+
+
+#******************** Trying to append all the titles  and calories together to make a list  **************************
+
+def title_list(food_time, num, day, title, calories):
+    
+    
+    # ***************************************
+    # ********** This is the list for breakfast title and calories ******************** #
+    # ****************************************
+    
+    breakfast_monday_list = []
+    breakfast_tuesday_list = []
+    breakfast_wednesday_list = []
+    breakfast_thursday_list = []
+    breakfast_friday_list = []
+    
+    
+    # ***************************************
+    # ********** This is the list for launch title and calories ********************* #
+    # ****************************************
+    
+    launch_monday_list = []
+    launch_tuesday_list = []
+    launch_wednesday_list = []
+    launch_thursday_list = []
+    launch_friday_list = []
+    
+    
+    # ***************************************
+    # ********** This is the list for dinner title and calories ********************* #
+    # ****************************************
+    
+    dinner_monday_list = []
+    dinner_tuesday_list = []
+    dinner_wednesday_list = []
+    dinner_thursday_list = []
+    dinner_friday_list = []
+    
+    
+    day_title_list = []
+    day_calories_list = []
+    
+# This if - else statement loads the json data based on what is passed- like dinner/ launch/ breakfast 
+
+    if food_time == "breakfast":
+        data= json.loads(dining_breakfast)
+        list_size= len(data[food_time][num][day])
+    elif food_time == "launch":
+        data= json.loads(dining_launch)
+        list_size= len(data[food_time][num][day])
+    elif food_time+ "dinner":
+        data= json.loads(dining_dinner)
+        list_size= len(data[food_time][num][day])
+        
+        
+        
+# This function can be used for all the launch, dinner and breakfast for mon- fri, just have to pass value to the parameters in the title_list function 
+
+
+    for i in range(list_size):
+        day_title = data[food_time][num][day][i][title]
+        day_calories = data[food_time][num][day][i][calories]
+        day_title_list.append(day_title)
+        day_calories_list.append(day_calories)
+    return day_title_list, day_calories_list
+        
+ 
+
+breakfast_monday_list = title_list("breakfast", 0, "monday", "title", "calories")
+breakfast_tuesday_list = title_list("breakfast", 1, "tuesday", "title", "calories")
+breakfast_wednesday_list = title_list("breakfast", 2, "wednesday", "title", "calories")
+breakfast_thursday_list = title_list("breakfast", 3, "thursday", "title", "calories")
+breakfast_friday_list = title_list("breakfast", 4, "friday","title", "calories")
+ 
+ 
+#Adding all the breakfast titles to breakfast_title
+ 
+breakfast_title= []
+breakfast_calories = []
+breakfast_title = breakfast_monday_list[0] + breakfast_tuesday_list[0] + breakfast_wednesday_list[0] +breakfast_thursday_list[0] +  breakfast_friday_list[0]
+breakfast_calories = breakfast_monday_list[1] + breakfast_tuesday_list[1] + breakfast_wednesday_list[1] +breakfast_thursday_list[1] +  breakfast_friday_list[1]
+print(breakfast_title)
+print(breakfast_calories)
+
+ 
+ 
+ 
+# **************************************************************************************************************************************************************
+# *********************************   This is for the launch **********************************************************************************************
+
+# **************************************************************************************************************************************************************
+
+
+
+launch_monday_list = title_list("launch", 0, "monday", "title", "calories")
+launch_tuesday_list = title_list("launch", 1, "tuesday", "title", "calories")
+launch_wednesday_list = title_list("launch", 2, "wednesday", "title", "calories")
+launch_thursday_list = title_list("launch", 3, "thursday", "title", "calories")
+launch_friday_list = title_list("launch", 4, "friday","title", "calories")
+ 
+ 
+#Adding all the breakfast titles to breakfast_title
+ 
+launch_title= []
+launch_calories = []
+launch_title = launch_monday_list[0] + launch_tuesday_list[0] + launch_wednesday_list[0] + launch_thursday_list[0] +  launch_friday_list[0]
+launch_calories = launch_monday_list[1] + launch_tuesday_list[1] + launch_wednesday_list[1] + launch_thursday_list[1] +  launch_friday_list[1]
+print(launch_title)
+print(launch_calories)
+
+
+ 
+# **************************************************************************************************************************************************************
+# *********************************   This is for the dinner **********************************************************************************************
+
+# **************************************************************************************************************************************************************
+
+
+dinner_monday_list = title_list("dinner", 0, "monday", "title", "calories")
+dinner_tuesday_list = title_list("dinner", 1, "tuesday", "title", "calories")
+dinner_wednesday_list = title_list("dinner", 2, "wednesday", "title", "calories")
+dinner_thursday_list = title_list("dinner", 3, "thursday", "title", "calories")
+dinner_friday_list = title_list("dinner", 4, "friday","title", "calories")
+ 
+ 
+#Adding all the breakfast titles to breakfast_title
+ 
+dinner_title= []
+dinner_calories = []
+dinner_title = dinner_monday_list[0] + dinner_tuesday_list[0] + dinner_wednesday_list[0] + dinner_thursday_list[0] +  dinner_friday_list[0]
+dinner_calories = dinner_monday_list[1] + dinner_tuesday_list[1] + dinner_wednesday_list[1] + dinner_thursday_list[1] +  dinner_friday_list[1]
+print(dinner_title)
+print(dinner_calories)
+
+
+# *******************************************************************************************************************************************************
+# ********************* HERE ARE THE IMPORTANT VAIRBALES THAT CONATAINS VALUES ***************************************************************************
+
+# *******************************************************************************************************************************************************
+'''
+breakfast_title             ***********contains ******      list of title served in breakfast
+
+breakfast_calories          ***********contains ******      list of calories served in breakfast
+
+launch_title                ***********contains ******      list of title served in breakfast
+
+launch_calories             ***********contains ******      list of calories served in breakfast
+
+dinner_title                ***********contains ******      list of title served in breakfast 
+
+dinner_calories             ***********contains ******      list of calories served in breakfast
+
+'''
