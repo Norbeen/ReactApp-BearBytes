@@ -4,9 +4,9 @@
 *************************** Breakfast/ Launch/ Dinner for each days Monday through Friday respectively '''
 
 
-import json, random 
+import json, random,requests
 
-
+from image import*
 
 
 '''This is the JSON format **************************
@@ -1246,8 +1246,8 @@ breakfast_title= []
 breakfast_calories = []
 breakfast_title = breakfast_monday_list[0] + breakfast_tuesday_list[0] + breakfast_wednesday_list[0] +breakfast_thursday_list[0] +  breakfast_friday_list[0]
 breakfast_calories = breakfast_monday_list[1] + breakfast_tuesday_list[1] + breakfast_wednesday_list[1] +breakfast_thursday_list[1] +  breakfast_friday_list[1]
-print(breakfast_title)
-print(breakfast_calories)
+# print(breakfast_title)
+# print(breakfast_calories)
 
  
  
@@ -1272,8 +1272,8 @@ launch_title= []
 launch_calories = []
 launch_title = launch_monday_list[0] + launch_tuesday_list[0] + launch_wednesday_list[0] + launch_thursday_list[0] +  launch_friday_list[0]
 launch_calories = launch_monday_list[1] + launch_tuesday_list[1] + launch_wednesday_list[1] + launch_thursday_list[1] +  launch_friday_list[1]
-print(launch_title)
-print(launch_calories)
+# print(launch_title)
+# print(launch_calories)
 
 
  
@@ -1296,8 +1296,8 @@ dinner_title= []
 dinner_calories = []
 dinner_title = dinner_monday_list[0] + dinner_tuesday_list[0] + dinner_wednesday_list[0] + dinner_thursday_list[0] +  dinner_friday_list[0]
 dinner_calories = dinner_monday_list[1] + dinner_tuesday_list[1] + dinner_wednesday_list[1] + dinner_thursday_list[1] +  dinner_friday_list[1]
-print(dinner_title)
-print(dinner_calories)
+# print(dinner_title)
+# print(dinner_calories)
 
 
 # *******************************************************************************************************************************************************
@@ -1318,3 +1318,48 @@ dinner_title                ***********contains ******      list of title served
 dinner_calories             ***********contains ******      list of calories served in breakfast
 
 '''
+
+
+# **********************************************************************************************************************************************************
+
+
+
+#Adding all the title together and calories together 
+# So we know the length of title for breakfast is - 0 to 39 
+# Length of title for launch is - 40 - 108
+#Length of title for dinenr is -  109 - 150
+
+
+joined_title = breakfast_title + launch_title + dinner_title
+joined_calorie = breakfast_calories + launch_calories + dinner_calories 
+
+
+# print("Length of title for breakfast is", len(breakfast_title))
+# print("Length of title for launch is", len(launch_title))
+# print("Length of title for dinner is", len(dinner_title))
+
+
+#function to fetch image for all the items, works, already fetched image
+
+# def image_list(name):
+#     image_list = []
+#     url ="https://api.unsplash.com/search/photos?query="+ name + "&client_id=sjauyr_gDNXxASXnt9fH3hCPitColEzzz8DVssM12SI"
+#     response = requests.get(url)
+#     json_body = response.json()
+#     image = json_body["results"][0]["urls"]["small"]
+#     image_list.append(image)
+#     return image_list
+
+# for i in range(len(launch_title)):
+#     name= launch_title[i]
+#     print(image_list(name))
+    
+#passed image list from image.py file used as passed_image_list, it contains the list of image combined for breakfast, launch and dinenr
+
+passed_image_list = image_list()
+
+
+def combined_list():
+    return joined_title , joined_calorie, passed_image_list
+    
+# print(combined_list())
