@@ -1,0 +1,4 @@
+Flask
+flask_socketio
+Flask-SQLAlchemy==2.1
+requests
