@@ -10,6 +10,7 @@ socketio = flask_socketio.SocketIO(app)
 
 def hello():
     return flask.render_template('index.html')
+    
 
 json_list = combined_list()
 title_parsed =json_list[0]
@@ -18,6 +19,10 @@ title_parsed =json_list[0]
 # image_parsed = passed_list[2]
 
 socketio.emit('json_file', {'parsed_data': title_parsed})
+
+@socketio.on('connect')
+def on_connect():
+    print('Someone connected!')
         
 if __name__ =='__main__':
     socketio.run(
