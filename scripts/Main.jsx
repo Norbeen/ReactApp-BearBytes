@@ -3,7 +3,6 @@ import * as ReactDOM from 'react-dom';
 import { Socket } from './Socket';
 import { Content } from './Content';
 
-
 ReactDOM.render(
     <Content />, 
     document.getElementById('content')
@@ -12,4 +11,3 @@ ReactDOM.render(
 Socket.on('connect', function() {
     console.log('Connecting to the server!');
 });
-
