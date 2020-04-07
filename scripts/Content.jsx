@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Socket } from './Socket';
 
 function NavigationBar(props){
   return(
