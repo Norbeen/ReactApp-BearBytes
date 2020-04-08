@@ -2,10 +2,10 @@ from dining import *
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
 import models
-from google.oauth2 import id_token
-import google.auth.transport.requests
-from google.auth.transport import requests
-request = google.auth.transport.requests.Request()
+#from google.oauth2 import id_token
+#import google.auth.transport.requests
+#from google.auth.transport import requests
+#request = google.auth.transport.requests.Request()
 
 
 
@@ -20,24 +20,26 @@ import models
 def hello():
     return flask.render_template('index.html')
 
-# json_list = combined_list()
-# title_parsed =json_list[0]
-# title_parsed =passed_list[0]
-# calorie_parsed = passed_list[1]
-# image_parsed = passed_list[2]
 
-# socketio.emit('json_file', {'parsed_data': title_parsed})
 @socketio.on('connect') 
 def on_connect():
-    menu = models.menu.query.all()
     print('Someone connected!')
+    menu_data = models.menuItem.query.all()
+    menu_list = []
+    for item in menu_data:
+        menu_list.append({
+            'title' : item.Utitle,
+            'rating' : item.Urating,
+            'calories' : item.Unutrition,
+            'reviews' : item.Ureviews,
+            'time' : item.Utypes,
+            'location' : item.Ulocation,
+            'imageLink' : item.Uimage
+        })
     
-@socketio.on('load_menu')
-def load_menu():
-    socketio.emit('get_data', {
-        'data' : menu 
+    socketio.emit('menu loaded' , {
+        'menu_items': menu_list
     })
-  
 @socketio.on('disconnect')
 def on_disconnect():
     print('Someone disconnected!')

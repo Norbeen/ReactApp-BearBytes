@@ -18,15 +18,23 @@ function NavigationBar(props){
 		</section>
 	)
 }
+
+function Rating(props){
+  return(
+    <div>
+    <img src={props.rating} alt="https://i.ibb.co/9hPds0L/2Rating.png" style={{paddingBottom: "5%", width:"60%"}}/>)
+    </div>
+    );
+}
+
 function FoodCard(props){
   return( 
   <div className="w3-row-padding w3-center">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
-        {/* TODO: need to replace the image and title with data from the json body */}
-        <img src="https://whereismyspoon.co/wp-content/uploads/2018/07/jollof-rice-2.jpg" alt="Food Item" style={{width:"70%", paddingTop: "5%"}}/>
-        <h5 style={{color: "#F46311"}}>Jollof Rice</h5>
-        <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+        <img src={props.image} alt="Food Item" style={{width:"70%", paddingTop: "5%"}}/>
+        <h5 style={{color: "#F46311"}}> {props.title} </h5>
+        <Rating rating={props.rating}/>
       </div>
     </div>
   </div>
@@ -44,17 +52,17 @@ export class Content extends React.Component {
       menu_data: []
     };
   }
-    getData = menu => {
-        console.log(menu);
-        this.setState({ menu_data: menu });
-  };
-
   componentDidMount() {
-      Socket.emit('load_menu');
-      Socket.on('get_data', this.getData);
+      Socket.on('menu loaded', (data) => {
+        this.state.menu_data = data['menu_data'];
+        this.SetState({
+          'menu_data': this.state.menu_data
+        });
+      })
       }
       
     render() {
+        let menu_items = this.state.menu_data;
         return (
         <div>
 		    <NavigationBar />
@@ -64,16 +72,26 @@ export class Content extends React.Component {
        {/*Creates padding so title starts under navigation bar*/}
         <div style={{paddingTop: "40px"}}></div>
     
-       {breakfastHeader}
-        <FoodCard />
-    
-       {lunchHeader}
-        <FoodCard />
-
-    
-        {dinnerHeader}
-        <FoodCard />
+        {breakfastHeader}
+        { menu_items.map ( item =>
+            <FoodCard 
+            title={item.title} image={item.imageLink} rating={item.rating}
+            />
+        )}  
         
+       {lunchHeader}
+        { menu_items.map ( item =>
+            <FoodCard 
+            title={item.title} image={item.imageLink} rating={item.rating}
+            />
+        )}
+        
+        {dinnerHeader}
+        { menu_items.map ( item =>
+          <FoodCard 
+          title={item.title} image={item.imageLink} rating={item.rating}
+          />
+        )}
       </div>
     </div>)
     }
