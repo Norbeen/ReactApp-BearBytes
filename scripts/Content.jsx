@@ -43,7 +43,7 @@ export class Content extends React.Component {
     this.state = {
       menu_data: []
     };
-  }
+  }/*
     getData = menu => {
         console.log(menu);
         this.setState({ menu_data: menu });
@@ -53,7 +53,7 @@ export class Content extends React.Component {
       Socket.emit('load_menu');
       Socket.on('get_data', this.getData);
       }
-      
+      */
     render() {
         return (
         <div>

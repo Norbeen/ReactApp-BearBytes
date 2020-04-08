@@ -1,7 +1,6 @@
 from dining import *
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
-import models
 from google.oauth2 import id_token
 import google.auth.transport.requests
 from google.auth.transport import requests
@@ -29,7 +28,7 @@ def hello():
 # socketio.emit('json_file', {'parsed_data': title_parsed})
 @socketio.on('connect') 
 def on_connect():
-    menu = models.menu.query.all()
+    #menu = models.menu.query.all()
     print('Someone connected!')
     
 @socketio.on('load_menu')
