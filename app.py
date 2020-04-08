@@ -1,6 +1,13 @@
-import os
-import flask, flask_socketio
 from dining import *
+import os, flask, flask_socketio, flask_sqlalchemy 
+from requests import *
+import models
+from google.oauth2 import id_token
+import google.auth.transport.requests
+from google.auth.transport import requests
+request = google.auth.transport.requests.Request()
+
+
 
 app = flask.Flask(__name__)
 
