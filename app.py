@@ -6,6 +6,8 @@ app = flask.Flask(__name__)
 
 socketio = flask_socketio.SocketIO(app)
 
+import models 
+
 @app.route('/')
 
 def hello():
@@ -20,11 +22,24 @@ def hello():
 # socketio.emit('json_file', {'parsed_data': title_parsed})
 @socketio.on('connect') 
 def on_connect():
-    print('Someone connected!') 
+    menu = models.menu.query.all()
+    print('Someone connected!')
     
-socketio.run(
-    app,
-    host=os.getenv('IP', '0.0.0.0'),
-    port=int(os.getenv('PORT', 8080)),
-    debug=True
- )
+@socketio.on('load_menu')
+def load_menu():
+    socketio.emit('get_data', {
+        'data' : menu 
+    })
+  
+@socketio.on('disconnect')
+def on_disconnect():
+    print('Someone disconnected!')
+
+
+if __name__ == '__main__':
+    socketio.run(
+        app,
+        host=os.getenv('IP', '0.0.0.0'),
+        port=int(os.getenv('PORT', 8080)),
+        debug=True
+    )

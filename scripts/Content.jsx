@@ -37,29 +37,44 @@ const breakfastHeader = <h3 className="food-time-header">Breakfast 7am-9am</h3>
 const lunchHeader = <h3 className="food-time-header">Lunch 11am-2pm</h3>
 const dinnerHeader = <h3 className="food-time-header">Dinner 4:30pm-8pm</h3>
 
-export class Content extends React.Component {
+export class Content extends React.Component { 
+    constructor(props) {
+    super(props);
+    this.state = {
+      menu_data: []
+    };
+  }
+    getData = menu => {
+        console.log(menu);
+        this.setState({ menu_data: menu });
+  };
+
+  componentDidMount() {
+      Socket.emit('load_menu');
+      Socket.on('get_data', this.getData);
+      }
+      
     render() {
-        return (<div>
-        
-		<NavigationBar />
+        return (
+        <div>
+		    <NavigationBar />
 		
-		{/*Creates margins for our cards */}
-    <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
+    	{/*Creates margins for our cards */}
+        <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
+       {/*Creates padding so title starts under navigation bar*/}
+        <div style={{paddingTop: "40px"}}></div>
     
-    {/*Creates padding so title starts under navigation bar*/}
-    <div style={{paddingTop: "40px"}}></div>
+       {breakfastHeader}
+        <FoodCard />
     
-    {breakfastHeader}
-    <FoodCard />
-    
-    {lunchHeader}
-    <FoodCard />
+       {lunchHeader}
+        <FoodCard />
 
     
-    {dinnerHeader}
-    <FoodCard />
+        {dinnerHeader}
+        <FoodCard />
         
-    </div>
+      </div>
     </div>)
     }
 }
