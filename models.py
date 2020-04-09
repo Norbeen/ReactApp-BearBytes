@@ -6,7 +6,7 @@ app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
 db = flask_sqlalchemy.SQLAlchemy(app.app)
 
 # This class is for students posting reviews 
-
+"""
 class reviewPost(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     Ucomment = db.Column(db.String(30))
@@ -57,3 +57,4 @@ class menuItem(db.Model):
     def __repr__(self):
         # return '<Message user_name: %s>' % self.user_name
         return "{'food title':'%s', 'food rating':'%s', 'food nutrition':'%s', 'food reviews':'%s', 'food types':'%s', 'food location':'%s', 'food image':'%s'}" % (self.Utitle, self.Urating, self.Unutrition, self.Ureviews, self.Utypes, self.Ulocation,self.Uimage )
+        """
