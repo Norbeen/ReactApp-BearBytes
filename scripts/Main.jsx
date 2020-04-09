@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Socket } from './Socket';
-import { Content } from './Content';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Router } from './Router';
 
 ReactDOM.render(
-    <BrowserRouter>
-          <Route path="/" component={Content}/>
-     </BrowserRouter>,
+    <Router />,
     document.getElementById('content')
     );
 

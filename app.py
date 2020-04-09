@@ -15,8 +15,11 @@ socketio = flask_socketio.SocketIO(app)
 import models 
 
 @app.route('/')
-
 def hello():
+    return flask.render_template('index.html')
+    
+@app.route('/review')
+def hi():
     return flask.render_template('index.html')
 
 # json_list = combined_list()
