@@ -1,9 +1,9 @@
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
-from google.oauth2 import id_token
-import google.auth.transport.requests
-from google.auth.transport import requests
-request = google.auth.transport.requests.Request()
+#from google.oauth2 import id_token
+#import google.auth.transport.requests
+#from google.auth.transport import requests
+#request = google.auth.transport.requests.Request()
 
 
 
