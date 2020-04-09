@@ -6,11 +6,11 @@ function NavigationBar(props){
   <section className="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div className="container">
 				<div className="navbar-header">
-					<a href="#" className="navbar-brand">BearBites</a>
+					<a href="/" className="navbar-brand">BearBites</a>
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">
-						<li><a href="#home" >Rawlings Dining Hall</a></li>
+						<li><a href="/" >Rawlings Dining Hall</a></li>
 						<li><a href="#gallery">Canteen</a></li>
 					</ul>
 				</div>

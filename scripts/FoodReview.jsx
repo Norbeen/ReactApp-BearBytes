@@ -6,11 +6,11 @@ function NavigationBar(props){
   <section className="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div className="container">
 				<div className="navbar-header">
-					<a href="#" className="navbar-brand">BearBites</a>
+					<a href="/" className="navbar-brand">BearBites</a>
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">
-						<li><a href="#home" >Rawlings Dining Hall</a></li>
+						<li><a href="/" >Rawlings Dining Hall</a></li>
 						<li><a href="#gallery">Canteen</a></li>
 					</ul>
 				</div>
@@ -18,7 +18,7 @@ function NavigationBar(props){
 		</section>
 	)
 }
-function FoodCard(props){
+function ReviewCard(props){
   return( 
   <div className="w3-row-padding w3-center">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
@@ -46,6 +46,9 @@ export class FoodReview extends React.Component {
         return (
         <div>
 		    <NavigationBar />
+       {/*Creates padding so title starts under navigation bar*/}
+        <div style={{paddingTop: "40px"}}></div>
+        <h3 className="food-time-header">Food details and Reviews</h3>
     </div>)
     }
 }
