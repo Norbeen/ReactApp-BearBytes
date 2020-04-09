@@ -29,6 +29,14 @@ The following **required** user stories are complete:
 - [ ] As a user, I should be able to see the top rated foods for the day, so I can quickly see the best options 
 - [ ] As a user I can filter comments by likes, dislikes, or time posted so I can see a variety of comments.
 
+## Checkpoint 1
+### The checkpoint 1 will constituent following implementations:
+* Get the website layout up and running using react(front end) and flask(backend)
+* Implement styling to beautify the website for better end user experience
+* Implementation of socket.io to talk between serverside and client side.
+* Database implementation
+* Create json for menu items
+
 
 
 
