@@ -22,7 +22,7 @@ function NavigationBar(props){
 function Rating(props){
   return(
     <div>
-    <img src={props.rating} alt="https://i.ibb.co/9hPds0L/2Rating.png" style={{paddingBottom: "5%", width:"60%"}}/>)
+    <img src='https://i.ibb.co/qr7QcSn/4Rating.png' alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>)
     </div>
     );
 }
@@ -34,7 +34,9 @@ function FoodCard(props){
       <div className="food-card">
         <img src={props.image} alt="Food Item" style={{width:"70%", paddingTop: "5%"}}/>
         <h5 style={{color: "#F46311"}}> {props.title} </h5>
-        <Rating rating={props.rating}/>
+        <Rating 
+        //rating={props.rating}
+        />
       </div>
     </div>
   </div>
@@ -49,7 +51,7 @@ export class Content extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      menu_data: []
+      'menu_data': []
     };
   }
   componentDidMount() {
@@ -75,21 +77,24 @@ export class Content extends React.Component {
         {breakfastHeader}
         { menu_items.map ( item =>
             <FoodCard 
-            title={item.title} image={item.imageLink} rating={item.rating}
+            title={item.title} image={item.imageLink} 
+            // rating={item.averageRating}
             />
         )}  
         
        {lunchHeader}
         { menu_items.map ( item =>
             <FoodCard 
-            title={item.title} image={item.imageLink} rating={item.rating}
+            title={item.title} image={item.imageLink} 
+            //rating={item.averageRating}
             />
         )}
         
         {dinnerHeader}
         { menu_items.map ( item =>
           <FoodCard 
-          title={item.title} image={item.imageLink} rating={item.rating}
+          title={item.title} image={item.imageLink} 
+          //rating={item.averageRating}
           />
         )}
       </div>

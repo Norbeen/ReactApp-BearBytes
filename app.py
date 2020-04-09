@@ -1,7 +1,6 @@
 from dining import *
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
-import models
 #from google.oauth2 import id_token
 #import google.auth.transport.requests
 #from google.auth.transport import requests
@@ -29,7 +28,7 @@ def on_connect():
     for item in menu_data:
         menu_list.append({
             'title' : item.Utitle,
-            'rating' : item.Urating,
+            'averageRating' : item.Urating,
             'calories' : item.Unutrition,
             'reviews' : item.Ureviews,
             'time' : item.Utypes,
@@ -40,6 +39,7 @@ def on_connect():
     socketio.emit('menu loaded' , {
         'menu_items': menu_list
     })
+    
 @socketio.on('disconnect')
 def on_disconnect():
     print('Someone disconnected!')
