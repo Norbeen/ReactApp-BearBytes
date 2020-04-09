@@ -1,4 +1,3 @@
-from dining import *
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
 from google.oauth2 import id_token
