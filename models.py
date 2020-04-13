@@ -9,7 +9,7 @@ db = flask_sqlalchemy.SQLAlchemy(app.app)
 
 class reviewPost(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    Ucomment = db.Column(db.String(30))
+    Ucomment = db.Column(db.String(300))
     Urating = db.Column(db.Integer)
     Ucategory = db.Column(db.String(300))
     Ulike= db.Column(db.Integer)
@@ -36,19 +36,19 @@ class reviewPost(db.Model):
 
 class menuItem(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    Utitle = db.Column(db.String(30))
+    Utitle = db.Column(db.String(3000))
     Urating = db.Column(db.Integer)
-    Unutrition = db.Column(db.String(300))
+    Unutrition = db.Column(db.String(3000))
     Ureviews= db.Column(db.Integer)
-    Utypes = db.Column(db.String(300))
-    Ulocation = db.Column(db.String(300))
-    Uimage = db.Column(db.String(300))
+    Utypes = db.Column(db.String(3000))
+    Ulocation = db.Column(db.String(3000))
+    Uimage = db.Column(db.String(3000))
     
     
-    def __init__(self, title, rating, nutrition, reviews, types, location, image): 
+    def __init__(self, title, rating, calories, reviews, types, location, image): 
         self.Utitle = title
         self.Urating = rating
-        self.Unutrition = image
+        self.Ucalories = calories
         self.Ureviews = reviews
         self.Utypes = types
         self.Ulocation = location
