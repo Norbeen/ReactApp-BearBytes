@@ -6,7 +6,7 @@
         "calories": "2 e.a (113 cal)",
         "types": "breakfast",
         "image": "https://images.unsplash.com/photo-1584278858764-2ddcd7f228da?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days": ["Monday"]
         
       },
       {
@@ -14,274 +14,159 @@
         "calories": "2 slices(87 cal)",
         "types": "breakfast",
         "image": " https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
-        "days":
+        "days":["Monday", "Thursday"]
       },
       {
         "title": "Turkey Sausage Patty ",
         "calories": " 2 oz(86.4 cal)",
         "types": "breakfast",
         "image": "https://images.eatthismuch.com/site_media/img/101476_LoveMoonshadow_7cd36035-6efb-4776-a2dc-f2ad16ed4a1f.jpg",
-        "days":
+        "days":["Monday", "Wednesday", "Friday"]
       },
       {
         "title": "Tater Tots ",
         "calories": " 1/2 cup(202.3 cal)",
         "types": " breakfast",
         "image": "https://images.unsplash.com/photo-1564976704241-79e265ed90fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Scrambled Eggs ",
         "calories": " 1/2 cup(202.3 cal)",
         "types": "breakfast",
         "image": "https://toriavey.com/images/2014/06/scrambled_eggs_001.jpg",
-        "days":
+        "days":["Monday", "Tuesday", "Wednesday, ""Thursday", "Friday"]
       },
       {
         "title": "Broccoli Quiche ",
         "calories": "1 slice (311.3 cal)",
         "types": "breakfast",
         "image": "https://images-gmi-pmc.edge-generalmills.com/489d945e-affa-42ee-b3ec-4a8fc19537b1.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Oatmeal ",
         "calories": "4 oz(71.6 cal) ",
         "types": "breakfast",
         "image": "https://images.unsplash.com/photo-1585849540407-2ddb0ecaf8ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
       },
       {
         "title": "Grits ",
         "calories": " 4 oz(72.7 cal)",
         "types": "breakfast",
         "image": "https://addapinch.com/wp-content/uploads/2019/06/instant-pot-grits-recipe-926-2.jpg",
-        "days":
+        "days":["Monday", "Wednesday", "Thursday", "Friday"]
       },
       {
         "title": "Biscuits ",
         "calories": " 1 ea (198.5 cal)",
         "types": "breakfast",
         "image": "https://www.momontimeout.com/wp-content/uploads/2012/05/biscuit-recipe-easy-1.jpg",
-        "days":
+        "days":["Tuesday", "Friday"]
       },
       {
         "title": "Country Ham ",
         "calories": " 20z meat(67.2 cal)",
         "types": "breakfast",
         "image": "https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Tuesday", "Friday"]
       },
       {
         "title": "Turkey Sausage Links ",
         "calories": " 1 ea(34.4 cal)",
         "types": "breakfast",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-oqyZwWaNRUmLp9UmphdW3Uqv4UajBVrUdqfQ1ZLTN0ukCO05&usqp=CAU",
-        "days": "tuesday"
+        "days": ["Tuesday", "Thursday"]
       },
       {
         "title": "Potatoes OBrien ",
         "calories": "1/2 cup(101.6 cal) ",
         "types": "breakfast",
         "image": "https://www.afamilyfeast.com/wp-content/uploads/2017/01/Potatoes-OBrien2.jpg",
-        "days":
+        "days":["Tuesday", "Thursday"]
       },
-      {
-        "title": "Scrambled Eggs ",
-        "calories": " 1/2 cup(202.3 cal)",
-        "types": "breakfast",
-        "image": "https://toriavey.com/images/2014/06/scrambled_eggs_001.jpg",
-        "days":
-      },
+ 
       {
         "title": "Scrambled Eggs with Cheese ",
         "calories": "1/2 cup(246.3 cal)",
         "types": "breakfast",
         "image": "https://images.eatthismuch.com/site_media/img/265600_defiledxhalo_7c107130-01fa-465b-bf82-becba482bd87.png",
-        "days":
+        "days":["Tuesday", "Friday"]
       },
-      {
-        "title": "Oatmeal ",
-        "calories": "4 oz(71.6 cal)",
-        "types": "breakfast",
-        "image": "https://images.unsplash.com/photo-1585849540407-2ddb0ecaf8ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Grits ",
-        "calories": "4 oz(72.7 cal) ",
-        "types": "breakfast",
-        "image": "https://addapinch.com/wp-content/uploads/2019/06/instant-pot-grits-recipe-926-2.jpg",
-        "days":
-      },
+   
       {
         "title": "Crispy Stuffed French Toast ",
         "calories": "1 ea(563 cal) ",
         "types": "breakfast",
         "image": "https://spicysouthernkitchen.com/wp-content/uploads/Crunchy-French-Toast-5.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Corned Beef Hash",
         "calories": " 1 serving(204 cal)",
         "types": "breakfast",
         "image": "https://www.simplyrecipes.com/wp-content/uploads/2009/03/corned-beef-hash-horiz-a-1200.jpg",
-        "days":
+        "days":["Wednesday"]
       },
-      {
-        "title": "Turkey Sausage Patty ",
-        "calories": " 2 oz(86.4 cal)",
-        "types": "breakfast",
-        "image": "https://images.eatthismuch.com/site_media/img/101476_LoveMoonshadow_7cd36035-6efb-4776-a2dc-f2ad16ed4a1f.jpg",
-        "days":
-      },
+
       {
         "title": "Crispy Hashbrowns ",
         "calories": "1/2 cup(202.3 cal) ",
         "types": "breakfast",
         "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/1/22/0/KC1602_Crispy-Hashbrowns_s4x3.jpg.rend.hgtvcom.826.620.suffix/1516656859953.jpeg",
-        "days":
-      },
-      {
-        "title": "Scrambled Eggs ",
-        "calories": " 1/2 cup(202.3 cal)",
-        "types": "breakfast",
-        "image": "https://toriavey.com/images/2014/06/scrambled_eggs_001.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Denver Scrambled Eggs ",
         "calories": " 1/2 cup(141.7 cal)",
         "types": "breakfast",
         "image": "https://goodcheapeats.com/wp-content/uploads/2019/04/Denver-Scramble.jpg",
-        "days":
+        "days":["Wednesday"]
       },
-      {
-        "title": "Oatmeal ",
-        "calories": " 4 oz(71.6 cal)",
-        "types": "breakfast",
-        "image": "https://images.unsplash.com/photo-1585849540407-2ddb0ecaf8ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Grits ",
-        "calories": "4 oz(72.7 cal) ",
-        "types": "breakfast",
-        "image": "https://addapinch.com/wp-content/uploads/2019/06/instant-pot-grits-recipe-926-2.jpg",
-        "days":
-      },
+
       {
         "title": "Banana Pancakes ",
         "calories": "2 ea(173.8 cal) ",
         "types": "breakfast",
         "image": "https://images.unsplash.com/photo-1575853121743-60c24f0a7502?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Thursday"]
       },
-      {
-        "title": "Pork Bacon",
-        "calories": " 2 slice(87 cal)",
-        "types": "breakfast",
-        "image": "https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
-        "days":
-      },
-      {
-        "title": "Turkey Sausage Links ",
-        "calories": " 2 ea(68.9 cal)",
-        "types": "breakfast",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-oqyZwWaNRUmLp9UmphdW3Uqv4UajBVrUdqfQ1ZLTN0ukCO05&usqp=CAU",
-        "days":
-      },
-      {
-        "title": "Scrambled Eggs ",
-        "calories": "1/2 cup(202.3 cal) ",
-        "types": "breakfast",
-        "image": "https://toriavey.com/images/2014/06/scrambled_eggs_001.jpg",
-        "days":
-      },
-      {
-        "title": "Potatoes OBrien ",
-        "calories": " 1/2 cup(101.6 cal)",
-        "types": "breakfast",
-        "image": "https://www.afamilyfeast.com/wp-content/uploads/2017/01/Potatoes-OBrien2.jpg",
-        "days":
-      },
+
       {
         "title": "Onion and Cheese Quiche ",
         "calories": "1 slice(180.7 cal) ",
         "types": "breakfast",
         "image": "https://images-gmi-pmc.edge-generalmills.com/489d945e-affa-42ee-b3ec-4a8fc19537b1.jpg",
-        "days":
-      },
-      {
-        "title": "Oatmeal ",
-        "calories": " 4 oz(71.6 cal)",
-        "types": "breakfast",
-        "image": "https://images.unsplash.com/photo-1585849540407-2ddb0ecaf8ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Grits ",
-        "calories": " 4oz(72.7 cal)",
-        "types": "breakfast",
-        "image": "https://addapinch.com/wp-content/uploads/2019/06/instant-pot-grits-recipe-926-2.jpg",
-        "days":
-      },
-      {
-        "title": "Biscuits ",
-        "calories": " 1 ea (198.5 cal)",
-        "types": "breakfast",
-        "image": "https://www.momontimeout.com/wp-content/uploads/2012/05/biscuit-recipe-easy-1.jpg",
-        "days":
-      },
-      {
-        "title": "Country Ham ",
-        "calories": "20z meat(67.2 cal) ",
-        "types": "breakfast",
-        "image": "https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Turkey Sausage Patty ",
-        "calories": " 2 0z(86.4 cal)",
-        "types": "breakfast",
-        "image": "https://images.eatthismuch.com/site_media/img/101476_LoveMoonshadow_7cd36035-6efb-4776-a2dc-f2ad16ed4a1f.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Tator Tots ",
         "calories": " 1/2 cup(168.7 cal)",
         "types": "breakfast",
         "image": "https://images.unsplash.com/photo-1564976704241-79e265ed90fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Friday"]
       },
-      {
-        "title": "Scrambled Eggs ",
-        "calories": " 1/2 cup(202.3 cal)",
-        "types": "breakfast",
-        "image": "https://toriavey.com/images/2014/06/scrambled_eggs_001.jpg",
-        "days":
-      },
-      {
-        "title": "Scrambled Eggs with Cheese ",
-        "calories": "1/2 cup(246.3 cal) ",
-        "types": "breakfast",
-        "image": "https://images.eatthismuch.com/site_media/img/265600_defiledxhalo_7c107130-01fa-465b-bf82-becba482bd87.png",
-        "days":
-      },
-      {
-        "title": "Oatmeal ",
-        "calories": " 4 oz(71.6 cal)",
-        "types": "breakfast",
-        "image": "https://images.unsplash.com/photo-1585849540407-2ddb0ecaf8ad?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Grits ",
-        "calories": " 4 oz(72.7 cal)",
-        "types": "breakfast",
-        "image": "https://addapinch.com/wp-content/uploads/2019/06/instant-pot-grits-recipe-926-2.jpg",
-        "days":
-      },
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       {
         "title": "Batter Fried Cod ",
         "calories": "4 oz (295 cal) ",
@@ -310,24 +195,6 @@
         "image": "https://www.yourhomebasedmom.com/wp-content/uploads/2016/05/Parmesan-Roasted-Carrots_FB.jpg",
         "days":
       },
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       {
         "title": "Cabbage Rolls ",
         "calories": " 4 oz(87.2 cal)",
