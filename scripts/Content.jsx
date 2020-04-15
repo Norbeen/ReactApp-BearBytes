@@ -61,7 +61,7 @@ export class Content extends React.Component {
         <div>
 		    <NavigationBar />
 		
-    	{/*Creates margins for our cards */}
+    	{/*Creates margins for our page content */}
         <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
        {/*Creates padding so title starts under navigation bar*/}
         <div style={{paddingTop: "40px"}}></div>

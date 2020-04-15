@@ -46,9 +46,13 @@ export class FoodReview extends React.Component {
         return (
         <div>
 		    <NavigationBar />
-       {/*Creates padding so title starts under navigation bar*/}
-        <div style={{paddingTop: "40px"}}></div>
-        <h3 className="food-time-header">Food details and Reviews</h3>
+  		  {/*Creates margins for our page content */}
+        <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
+          {/*Creates padding so title starts under navigation bar*/}
+          <div style={{paddingTop: "40px"}}></div>
+          <img src="https://whereismyspoon.co/wp-content/uploads/2018/07/jollof-rice-2.jpg" alt="Food Item" style={{width:"500px", height:"500px", paddingTop: "5%"}} />
+          <h3 className="food-time-header">Food details and Reviews</h3>
+        </div>
     </div>)
     }
 }
