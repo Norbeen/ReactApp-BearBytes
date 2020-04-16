@@ -30,6 +30,7 @@ http://www.tooplate.com/view/2076-zentro
 }
 
 .food-card {
+  width: 90%;
   padding-top: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -69,3 +70,8 @@ http://www.tooplate.com/view/2076-zentro
   
   background: #F46311;
 }
+
+.review-button:hover {
+  background: #E86013;
+}
+
