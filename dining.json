@@ -167,160 +167,133 @@
       
       
       
-      {
+       {
         "title": "Batter Fried Cod ",
         "calories": "4 oz (295 cal) ",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1562967914-01efa7e87832?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Chicken Breast Newport ",
         "calories": " 4 oz(150.9 cal)",
         "types": "launch",
         "image": "https://barnabyscafe.com/mobile/images/barnaby-s%20grilled%20chicken%20breast.jpg?crc=235139527",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Herbed Rice Pilaf ",
         "calories": "4 oz(144cal) ",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Parmesan Roasted Carrots ",
         "calories": "4 oz(92.7cal)",
         "types": "launch",
         "image": "https://www.yourhomebasedmom.com/wp-content/uploads/2016/05/Parmesan-Roasted-Carrots_FB.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Cabbage Rolls ",
         "calories": " 4 oz(87.2 cal)",
         "types": "launch",
         "image": "https://www.dinneratthezoo.com/wp-content/uploads/2018/11/stuffed-cabbage-rolls-1.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Sauteed Kale ",
         "calories": " 4 oz(92.7 cal)",
         "types": "launch",
         "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/8/13/1/BF_Sauteed-Kale-1_s4x3.jpg.rend.hgtvcom.826.620.suffix/1382541816255.jpeg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Parmesan Roasted Potatoes ",
         "calories": " 4 oz(92.7 cal)",
         "types": "launch",
         "image": "https://iwashyoudry.com/wp-content/uploads/2018/11/Parmesan-Roasted-Potatoes-3-675x859.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Pasta Bar ",
         "calories": " 6 oz(345 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Wednesday", "Monday"]
       },
       {
         "title": "Hamburger on Bun",
         "calories": "1 sandwich (426.9 cal) ",
         "types": "launch",
         "image": "https://i.ytimg.com/vi/ace-TXcX6GY/hqdefault.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Caramelized Onions ",
         "calories": " 1 oz(36.1 cal)",
         "types": "launch",
         "image": "https://www.foodiecrush.com/wp-content/uploads/2017/10/Caramelized-Onions-foodiecrush.com-012.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "American Cheese Slice ",
         "calories": "1 slice(51.9 cal) ",
         "types": "launch",
         "image": "https://cdn.vox-cdn.com/thumbor/kfZfsC01EPpPtFNNC94Uc68XMFk=/0x0:473x362/1200x800/filters:focal(200x144:274x218)/cdn.vox-cdn.com/uploads/chorus_image/image/61737207/89120822_170667a.0.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Sauteed Mushrooms ",
         "calories": "1 oz(20.4 cal) ",
         "types": "launch",
         "image": "https://www.bowlofdelicious.com/wp-content/uploads/2019/10/Sauteed-Mushrooms-2.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Coleslaw ",
         "calories": " 1/2 oz(9.7 cal)",
         "types": "launch",
         "image": "https://www.thespruceeats.com/thmb/zrP2Lzmpmor9rgYlkmJv7jZNqkY=/4494x2528/smart/filters:no_upscale()/quick-and-easy-creamy-coleslaw-3053933-hero-01-5c29166bc9e77c0001d08c7f.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Sliced Jalapeno ",
         "calories": " 1/2 oz(3.8 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1582998489505-b9b8b172073e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Hard Fried Eggs ",
         "calories": " 1 ea(83 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1585941479819-ce92ab8167fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Pork Bacon ",
         "calories": " 2 slices(87 cal)",
         "types": "launch",
         "image": "https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "French Fries",
         "calories": " 4 oz(224.3 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1484009902830-a314db11070c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Garden Burger",
-        "calories": " 1 ea(151.4 cal)",
-        "types": "launch",
-        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
+        "days":["Monday", "Tuesday", "Friday"]
       },
       {
         "title": "Grilled Cheese Sandwich ",
         "calories": " 1 sandwich(378 cal)",
         "types": "launch",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/grilled-cheese-horizontal-jpg-1522266016.jpg",
-        "days":
+        "days":["Monday"]
       },
-      {
-        "title": "French Fries",
-        "calories": "4oz(224.3 cal) ",
-        "types": "launch",
-        "image": "https://images.unsplash.com/photo-1484009902830-a314db11070c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Garden Burger ",
-        "calories": "1 ea(362.5 cal) ",
-        "types": "launch",
-        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
-      },
-      {
-        "title": "Turkey Burger ",
-        "calories": " 1 sandwitch(362.5 cal)",
-        "types": "launch",
-        "image": "https://www.honeysucklewhite.com/wp-content/uploads/2019/03/HSW_Recipe_Square_0006_CaliforniaTurkeyBurger.jpg",
-        "days":
-      },
+
       {
         "title": "Chana Masala ",
         "calories": " 4 oz(122.1 cal)",
@@ -385,20 +358,6 @@
         "days":
       },
       {
-        "title": "Garden Burger ",
-        "calories": " 1 ea(151.4 cal)",
-        "types": "launch",
-        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
-      },
-      {
-        "title": "Turkey Burger ",
-        "calories": " 1 sandwich(362.5 cal)",
-        "types": "launch",
-        "image": "https://www.honeysucklewhite.com/wp-content/uploads/2019/03/HSW_Recipe_Square_0006_CaliforniaTurkeyBurger.jpg",
-        "days":
-      },
-      {
         "title": "Braized Beef Tips ",
         "calories": "6oz(227.9 cal)",
         "types": "launch",
@@ -448,13 +407,6 @@
         "days":
       },
       {
-        "title": "Pasta Bar ",
-        "calories": " 6 oz(345 cal)",
-        "types": "launch",
-        "image": "https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
         "title": "Cheese Quesadillas ",
         "calories": "1 ea (445.9 cal)",
         "types": "launch",
@@ -480,178 +432,141 @@
         "calories": " 1 ea (151.4 cal)",
         "types": "launch",
         "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
+        "days":["Monday", "Tuesday", "Wednesday"]
       },
       {
         "title": "Turkey Burger ",
         "calories": " 1 sandwich(362.5 cal)",
         "types": "launch",
         "image": "https://www.honeysucklewhite.com/wp-content/uploads/2019/03/HSW_Recipe_Square_0006_CaliforniaTurkeyBurger.jpg",
-        "days":
+        "days":["Wednesday", "Thursday", "Friday"]
       },
       {
         "title": "Thai BBQ Chicken ",
         "calories": " 1 ea(215.7 cal)",
         "types": "launch",
         "image": "https://www.seriouseats.com/recipes/images/2014/06/20130513-gai-yang-food-lab-recipe-30.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Stuffed Shells Florentine ",
         "calories": "2 ea(231.7 cal) ",
         "types": "launch",
         "image": "https://d1bjorv296jxfn.cloudfront.net/s3fs-public/111-Florentine_Stuffed_Shells_1.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Jasmine Pilaf with Mushrooms and Peas ",
         "calories": "4 oz(109.3 cal) ",
         "types": "launch",
         "image": "https://www.recipetineats.com/wp-content/uploads/2017/08/Mushroom-Rice-Pilaf-4-1.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Cheese Ravioli ",
         "calories": "1/2 cup(238.6 cal) ",
         "types": "launch",
         "image": "https://selfproclaimedfoodie.com/wp-content/uploads/four-cheese-ravioli-self-proclaimed-foodie-6.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Sauteed Spinach ",
         "calories": " 4 oz(60cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1578283326173-fbb0f83b59b2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Roasted Mixed Vegetables ",
         "calories": "4 oz(60cal) ",
         "types": "launch",
         "image": "https://www.tablefortwoblog.com/wp-content/uploads/2013/09/roasted-veggies-tablefortwoblog-3.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Chicken Fried Rice ",
         "calories": " 1 cup(280.1 cal)",
         "types": "launch",
         "image": "https://valentinascorner.com/wp-content/uploads/2018/04/Easy-Chicken-Fried-Rice-10-of-11.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Pulled Pork Sandwich ",
         "calories": " 1 serving(632.5 cal)",
         "types": "launch",
         "image": "https://www.sixsistersstuff.com/wp-content/uploads/2012/03/smoked-pulled-pork-683x1024.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Onion Rings ",
         "calories": " 4 oz(320.7 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1521231586907-4ae95c1934c1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Garden Burger ",
-        "calories": "1 ea(151.4 cal) ",
-        "types": "launch",
-        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
-      },
-      {
-        "title": "Turkey Burger ",
-        "calories": " 1 ea(362.5 cal)",
-        "types": "launch",
-        "image": "https://www.honeysucklewhite.com/wp-content/uploads/2019/03/HSW_Recipe_Square_0006_CaliforniaTurkeyBurger.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Sesame Garlic Shrimp ",
         "calories": "4 oz(266.8 cal) ",
         "types": "launch",
         "image": "https://www.simplyrecipes.com/wp-content/uploads/2015/09/ginger-sesame-garlic-shrimp-vertical-a-12001.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Garlic Rosemary Pork Loin ",
         "calories": " 4 oz(246.3 cal)",
         "types": "launch",
         "image": "https://livelytable.com/wp-content/uploads/2015/11/rosemary-garlic-pork-loin-4.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Basmati Rice ",
         "calories": "4 oz(147.4 cal) ",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Chard and Spring Pea Risotto ",
         "calories": " 4 oz(71 cal)",
         "types": "launch",
         "image": "https://discoverhealth.org/files/imgs/recipes/__thumbs/chard-spring-pea-farro-risotto_1200x600.jpg/chard-spring-pea-farro-risotto_1200x600__600x300.jpg",
-        "days":
+        "days":["Thurdsay"]
       },
       {
         "title": "Cauliflower and Snow Peas ",
         "calories": "4 oz(64.3 cal)",
         "types": "launch",
         "image": "https://salu-salo.com/wp-content/uploads/2018/07/Sauteed-Cauliflower-and-Snow-Peas-3.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Carrots with Ginger ",
         "calories": " 4 oz(61.5 cal)",
         "types": "launch",
         "image": "https://images.unsplash.com/photo-1567137827022-fbe18eff7275?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Ice Cream Sundae Bar ",
         "calories": "1 serving(48.1 cal) ",
         "types": "launch",
         "image": "https://www.thekiwicountrygirl.com/wp-content/uploads/2016/03/Ice-Cream-Sundae-Bar-1-1024x683.jpg",
-        "days":
+        "days": ["Tuesday"]
       },
       {
         "title": "Red Velvet Cake ",
         "calories": " 1 slice(583.1 cal)",
         "types": "launch",
         "image": "https://www.livewellbakeoften.com/wp-content/uploads/2019/01/Red-Velvet-Cake-8.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Barbeque Chicken Sub ",
         "calories": " 1 ea(669.3 cal)",
         "types": "launch",
         "image": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps18430_FM153592C03_10_5b.jpg",
-        "days":
+        "days":["Tuesday"]
       },
-      {
-        "title": "French Fries ",
-        "calories": "4 oz(224.3 cal) ",
-        "types": "launch",
-        "image": "https://images.unsplash.com/photo-1582998487710-959e65ca50c1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
-      },
-      {
-        "title": "Garden Burger ",
-        "calories": " 1 ea(151.4 cal)",
-        "types": "launch",
-        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/2/FNM_060112-Garden-Burger-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606263641.jpeg",
-        "days":
-      },
-      {
-        "title": "Turkey Burger ",
-        "calories": " 1 ea(362.5 cal)",
-        "types": "launch",
-        "image": "https://www.honeysucklewhite.com/wp-content/uploads/2019/03/HSW_Recipe_Square_0006_CaliforniaTurkeyBurger.jpg",
-        "days":
-      },
-      
-      
       
       
       
