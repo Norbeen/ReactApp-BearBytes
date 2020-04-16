@@ -147,27 +147,7 @@
         "image": "https://images.unsplash.com/photo-1564976704241-79e265ed90fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
         "days":["Friday"]
       },
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-       {
+      {
         "title": "Batter Fried Cod ",
         "calories": "4 oz (295 cal) ",
         "types": "launch",
@@ -567,309 +547,285 @@
         "image": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps18430_FM153592C03_10_5b.jpg",
         "days":["Tuesday"]
       },
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       {
         "title": "Texas Pot Roast ",
         "calories": " 4 oz(138.6 cal)",
         "types": "dinner",
         "image": "https://i.pinimg.com/originals/4a/be/dd/4abedd4b959aa0ffb702f9097c2fb22e.png",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Barbecued Pork Chop ",
         "calories": " 1 ea(252.2 cal)",
         "types": "dinner",
         "image": "https://assets.myfoodandfamily.com/adaptivemedia/rendition/65866_3000x2000.jpg?id=0a82387424551f7d919e2dc55c759b9a1176f11a&ht=650&wd=1004&clid=pim",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Steamed Brown Rice ",
         "calories": " 4 oz(137 cal)",
         "types": "dinner",
         "image": "https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_973/https://healthiersteps.com/wp-content/uploads/2019/02/how-to-cook-jasmine-brown-rice-1.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Vegetarian Boston Baked Beans ",
         "calories": "4 oz(144.1 cal) ",
         "types": "dinner",
         "image": "https://www.thespruceeats.com/thmb/9QXthCsyxrHaxB24mwATcogCiYo=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/pot-of-baked-beans-on-a-blue-gingham-155127673-5a9c515c642dca0037579aaf.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Beef Gravy ",
         "calories": " 1 oz(9.2 cal)",
         "types": "dinner",
         "image": "https://www.lecremedelacrumb.com/wp-content/uploads/2016/11/brown-gravy-102-500x500.jpg",
-        "days":
+        "days":["Monday", "Wednesday"]
       },
       {
         "title": "Carrots and Broccoli ",
         "calories": "4 oz(59 cal) ",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1518164147695-36c13dd568f5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Eggplant Creole ",
         "calories": " 4 oz(32.6 cal)",
         "types": "dinner",
         "image": "https://blog.fatfreevegan.com/wp-content/uploads/2006/07/eggplant-creole.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Vegetable Fried Rice ",
         "calories": " 4 oz(158 cal)",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Asian Vegetable Blend ",
         "calories": " 4 oz(41.8 cal)",
         "types": "dinner",
         "image": "https://i.pinimg.com/originals/5e/b7/e0/5eb7e0fd7c66cdbdd6312805c2b517ce.jpg",
-        "days":
+        "days":["Monday"]
       },
       {
         "title": "Hard Shell Beef Tacos ",
         "calories": "1 ea(285.9 cal) ",
         "types": "dinner",
         "image": "https://www.dinneratthezoo.com/wp-content/uploads/2018/05/ground-beef-tacos-2.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Grilled Adobo Chicken ",
         "calories": "4 oz(254.6 cal) ",
         "types": "dinner",
         "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fgrilled-chicken-adobo.jpg%3Fitok%3Dz9_QlJun",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Mexican Rice ",
         "calories": " 4 oz(140.3 cal)",
         "types": "dinner",
         "image": "https://www.yellowblissroad.com/wp-content/uploads/2016/03/Mexican-Rice-6-of-8.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Grilled Corn ",
         "calories": "1 ea(163.4 cal) ",
         "types": "dinner",
         "image": "https://www.seriouseats.com/recipes/images/2016/08/20160802-grilled-corn-harissa-mint-1500x1125.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Chipotle Pinto Beans ",
         "calories": "4oz(109.1 cal) ",
         "types": "dinner",
         "image": "https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_412,h_232/v1/img/recipes/14/65/49/picE3Q9yy.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Tofu and Veggie Scampi ",
         "calories": "4 oz(164.3 cal) ",
         "types": "dinner",
         "image": "https://www.connoisseurusveg.com/wp-content/uploads/2016/05/vegan-tofu-artichoke-scampi-1200-1-of-1.jpg",
-        "days":
+        "days":["Tuesday"]
       },
       {
         "title": "Southern Fried Chicken ",
         "calories": " 1 serving(534.7 cal)",
         "types": "dinner",
         "image": "https://www.thespruceeats.com/thmb/5EJU2Kz4m7N3i2tTZe1G_wyzoVc=/1500x844/smart/filters:no_upscale()/classic-southern-fried-chicken-3056867-11_preview-5b106156119fa80036c19a9e.jpeg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Baked Chicken ",
         "calories": "1 ea(160.7 cal) ",
         "types": "dinner",
         "image": "https://www.gimmesomeoven.com/wp-content/uploads/2015/05/Oven-Baked-Chicken-Breast-Recipe-4-1.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Salisbury Steak ",
         "calories": " 1 ea(275.5 cal)",
         "types": "dinner",
         "image": "https://www.cscassets.com/recipes/large_cknew/large_25529.jpg",
-        "days":
-      },
-      {
-        "title": "Beef Gravy ",
-        "calories": "1 oz(9.2 cal) ",
-        "types": "dinner",
-        "image": "https://www.lecremedelacrumb.com/wp-content/uploads/2016/11/brown-gravy-102-500x500.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "White Rice ",
         "calories": " 4oz(150.4 cal)",
         "types": "dinner",
         "image": "https://www.thespruceeats.com/thmb/eyNdncFPRMd_imxHvkbMopfEe-s=/3797x2848/smart/filters:no_upscale()/how-to-make-basic-white-rice-2355883-10-5b0da96eba6177003622896e.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Signature Macaroni and Cheese ",
         "calories": " 4 oz(63.2 cal)",
         "types": "dinner",
         "image": "https://i.ytimg.com/vi/Cm2SVpdw3_4/maxresdefault.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Vegetarian Collard Greens ",
         "calories": "4oz (63.2 cal) ",
         "types": "dinner",
         "image": "https://www.seriouseats.com/recipes/images/2017/02/20170217-vegan-collard-greens-vicky-wasik-6-1500x1125.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Steamed Broccoli ",
         "calories": "4oz(38.7 cal) ",
         "types": "dinner",
         "image": "https://healthyrecipesblogs.com/wp-content/uploads/2012/09/steamed-broccoli-square.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Crispy Vegan Chicken Tenders ",
         "calories": "2 ea(180 cal) ",
         "types": "dinner",
         "image": "https://dmi4pvc5gbhhd.cloudfront.net/CACHE/images/nuggets/306cb93dfe00a4de6c571edcdb755d0e.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Vegetarian Collard Greens ",
         "calories": "4oz (63.2 cal) ",
         "types": "dinner",
         "image": "https://www.seriouseats.com/recipes/images/2017/02/20170217-vegan-collard-greens-vicky-wasik-6-1500x1125.jpg",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Baked Sweet Potato ",
         "calories": " 1 ea (135.9 cal)",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1576458634550-157c96efa950?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Wednesday"]
       },
       {
         "title": "Beef Lo Mein ",
         "calories": "4 oz(242.5 cal) ",
         "types": "dinner",
         "image": "https://therecipecritic.com/wp-content/uploads/2017/08/0C4A9579.jpg",
-        "days":
+        "days":["Thurdsay"]
       },
       {
         "title": "Honey Ginger Glazed Chicken ",
         "calories": "4 oz(267.6 cal) ",
         "types": "dinner",
         "image": "https://img.sndimg.com/food/image/upload/c_thumb,q_80,w_412,h_232/v1/img/recipes/75/62/8/pic3fCmn0.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Brown Fried Rice ",
         "calories": " 4 oz(181.4 cal)",
         "types": "dinner",
         "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/8c13419678474dfa97b562df829674d2/BFV36769_InstantPotDinners-FB1080x1080.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Squash, Zucchini Peppers and Carrots ",
         "calories": "4 oz(51 cal) ",
         "types": "dinner",
         "image": "https://natashaskitchen.com/wp-content/uploads/2015/10/Roasted-Vegetables-Recipe-10-600x900.jpg",
-        "days":
+        "days":["Thurdsay"]
       },
       {
         "title": "Asparagus with Garlic ",
         "calories": " 4 oz(53.9 cal)",
         "types": "dinner",
         "image": "https://www.myfooddiary.com/blog/asset/2017/roasted_asparagus_recipe.jpg",
-        "days":
+        "days":["Thurdsay"]
       },
       {
         "title": "Southwestern Black Bean Pot Pie ",
         "calories": "4 oz(133.6 cal) ",
         "types": "dinner",
         "image": "https://www.cottercrunch.com/wp-content/uploads/2016/12/updated-HERO-shot-southwestern-polenta-casserole.jpg",
-        "days":
+        "days":["Thursday"]
       },
       {
         "title": "Fried Fish ",
         "calories": " 1 ea(254.4 cal)",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1515669097368-22e68427d265?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Thurdsay"]
       },
       {
         "title": "Creole Spaghetti ",
         "calories": "4 oz(140.2 cal) ",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1585509227843-d315eb54e6fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Classic Fried Green Tomatoes ",
         "calories": " 3 slice(314.6 cal)",
         "types": "dinner",
         "image": "https://i2.wp.com/theanchoredkitchen.com/wp-content/uploads/2018/07/DSC_5254.jpg?resize=900%2C602",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Cheese Grits ",
         "calories": "4 oz(82.9 cal) ",
         "types": "dinner",
         "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cheese-grits-horinzontal-2-1550618467.png?crop=0.668xw:1.00xh;0.265xw,0&resize=480:*",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Corn with Pimento ",
         "calories": "4 oz(37.6 cal) ",
         "types": "dinner",
         "image": "https://vegonline.org/wp-content/uploads/2013/03/chilled-corn-pimento-salad-610x300.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Vegan Meatballs ",
         "calories": "3 ea(150 cal) ",
         "types": "dinner",
         "image": "https://minimalistbaker.com/wp-content/uploads/2018/05/PERFECT-Vegan-Meatballs-10-ingredients-easy-to-make-BIG-flavor-SO-delicious-vegan-glutenfree-dinner-meatball-recipe-minimalistbaker-6.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Chickpeas and Spinach ",
         "calories": "4 oz(134 cal) ",
         "types": "dinner",
         "image": "https://static01.nyt.com/images/2019/01/15/dining/mrs-chickpeas-with-baby-spinach/merlin_148333146_7dc41b22-3671-43a5-a168-9f78701be99e-articleLarge.jpg",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Spaghetti ",
         "calories": "4 oz(178 cal) ",
         "types": "dinner",
         "image": "https://images.unsplash.com/photo-1585509227843-d315eb54e6fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":
+        "days":["Friday"]
       },
       {
         "title": "Marinara Sauce ",
         "calories": " 1 oz(13.8 cal)",
         "types": "dinner",
         "image": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2014/11/Marinara-Sauce.jpg",
-        "days":
+        "days":["Friday"]
       }
     ]
 }
