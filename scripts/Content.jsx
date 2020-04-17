@@ -24,7 +24,7 @@ function FoodCard(props){
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
       {/* TODO: need to replace the image and title with data from the json body */}
-      <img src="https://whereismyspoon.co/wp-content/uploads/2018/07/jollof-rice-2.jpg" alt="Food Item" style={{width:"70%", paddingTop: "5%"}}/>
+      <img src="https://whereismyspoon.co/wp-content/uploads/2018/07/jollof-rice-2.jpg" alt="Food Item" style={{width:"70%", paddingTop: "5%", objectFit: "cover"}}/>
       <h5 style={{color: "#F46311"}}>Jollof Rice</h5>
       <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
     </div>
@@ -66,15 +66,6 @@ export class Content extends React.Component {
     
        {breakfastHeader}
         <div className="w3-row-padding w3-center">
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
           <FoodCard />
         </div>
     
