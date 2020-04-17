@@ -27,16 +27,24 @@ function ReviewCard(props){
           <img src="https://i.pinimg.com/736x/ab/63/54/ab63547c6ecef3a4d542156532f5266e.jpg" alt="profile picture" style={{height: "80px", width:"80px", borderRadius: "50%", paddingTop: "5%", paddingBottom: "5%", objectFit: "cover", float:"right"}}/>
         </div>
         <div className="w3-col" style={{width:"60%"}}>
-          <h5 style={{color: "#F46311"}}>Meorge Gartin</h5>
-          <div className="w3-row" >
-            <h7 style={{color: "#F46311"}}>04/16/2020</h7>
+          <div className="w3-row">
+            <h5 style={{color: "#F46311"}}>Meorge Gartin</h5>
           </div>
-          <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{width:"40%"}}/>
+          <div className="w3-row">
+            <img src="https://i.ibb.co/88Bp8w2/thumb-up-24px-1.png" alt="Rating" style={{width:"10%"}}/>
+            <h7 style={{color: "#F46311", paddingRight:"10px"}}>10</h7>
+            <img src="https://i.ibb.co/p4yrh6Z/thumb-down-24px-1.png" alt="Rating" style={{width:"10%"}}/>
+            <h7 style={{color: "#F46311"}}>3</h7>
+          </div>
+            <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{width:"50%"}}/>
         </div>
       </div>
       <div className="review-divider"/>
-      <p style={{color: "#F46311", width: "80%", marginLeft:"auto", marginRight: "auto", paddingTop: "2%"}}>The food was delisous today omg! Here is what it looked like today.spiced well-well. </p>
-      <img src="https://gbc-cdn-public-media.azureedge.net/img82551.768x512.jpg" alt="Food Item" style={{width:"200px",height:"200px", paddingBottom: "5%", objectFit: "cover"}}/>
+        <div className="w3-row" >
+            <h6 style={{color: "#F46311"}}>04/16/2020</h6>
+        </div>
+        <p style={{color: "#F46311", width: "80%", marginLeft:"auto", marginRight: "auto", paddingTop: "2%"}}>dis chop de sweet me ehh. spiced well-well, eh di pass me correct. </p>
+        <img src="https://gbc-cdn-public-media.azureedge.net/img82551.768x512.jpg" alt="Food Item" style={{width:"200px",height:"200px", paddingBottom: "5%", objectFit: "cover"}}/>
     </div>
   </div>
   )
