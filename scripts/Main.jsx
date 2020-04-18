@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Socket } from './Socket';
-import { Content } from './Content';
+import { Router } from './Router';
 
 ReactDOM.render(
-    <Content />, 
+    <Router />,
     document.getElementById('content')
     );
 

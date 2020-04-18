@@ -10,7 +10,7 @@ function NavigationBar(props){
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">
-						<li><a href="#home" >Rawlings Dining Hall</a></li>
+						<li><a href="/" >Rawlings Dining Hall</a></li>
 						<li><a href="#gallery">Canteen</a></li>
 					</ul>
 				</div>
@@ -22,13 +22,14 @@ function NavigationBar(props){
 function Rating(props){
   return(
     <div>
-    <img src='https://i.ibb.co/qr7QcSn/4Rating.png' alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>)
+    <img src='https://i.ibb.co/qr7QcSn/4Rating.png' alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
     </div>
     );
 }
 
 function FoodCard(props){
   return( 
+  <a a href="/review">
   <div className="w3-row-padding w3-center">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
@@ -39,9 +40,9 @@ function FoodCard(props){
         />
       </div>
     </div>
-  </div>
-  )
-}
+    </div>
+  </a>
+  )}
 
 const breakfastHeader = <h3 className="food-time-header">Breakfast 7am-9am</h3>
 const lunchHeader = <h3 className="food-time-header">Lunch 11am-2pm</h3>
@@ -51,20 +52,29 @@ export class Content extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      'menu_data': []
+      'breakfast_data': [],
+      'lunch_data': [],
+      'dinner_data': []
     };
-  }
+    
+    this.componentDidMount = this.componentDidMount.bind(this)
+    }
   componentDidMount() {
       Socket.on('menu loaded', (data) => {
-        this.state.menu_data = data['menu_data'];
-        this.SetState({
-          'menu_data': this.state.menu_data
+            this.setState({
+          'breakfast_data': data['breakfast_items'],
+           'lunch_data': data['lunch_items'],
+          'dinner_data' : data['dinner_items']
         });
-      })
       }
-      
+      )
+      }
+
     render() {
-        let menu_items = this.state.menu_data;
+        let breakfast_items = this.state.breakfast_data;
+        let lunch_items = this.state.lunch_data;
+        let dinner_items = this.state.dinner_data;
+
         return (
         <div>
 		    <NavigationBar />
@@ -75,28 +85,28 @@ export class Content extends React.Component {
         <div style={{paddingTop: "40px"}}></div>
     
         {breakfastHeader}
-        { menu_items.map ( item =>
+        { breakfast_items.map ( bf_item =>
             <FoodCard 
-            title={item.title} image={item.imageLink} 
+             image={bf_item.bf_imageLink} title={bf_item.bf_title}
             // rating={item.averageRating}
             />
         )}  
         
-       {lunchHeader}
-        { menu_items.map ( item =>
+       {/*lunchHeader}
+       { lunch_items.map ( lunch_item =>
             <FoodCard 
-            title={item.title} image={item.imageLink} 
+             image={lunch_item.lunch_imageLink} title={lunch_item.lunch_title}
             //rating={item.averageRating}
             />
         )}
         
         {dinnerHeader}
-        { menu_items.map ( item =>
+        { dinner_items.map ( dinner_item =>
           <FoodCard 
-          title={item.title} image={item.imageLink} 
+          image={dinner_item.din_imageLink} title={item.din_title} 
           //rating={item.averageRating}
           />
-        )}
+        )*/}
       </div>
     </div>)
     }
