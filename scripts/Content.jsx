@@ -20,7 +20,7 @@ function NavigationBar(props){
 }
 function FoodCard(props){
   return( 
-  <a a href="/review">
+  <a href="/review">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
       {/* TODO: need to replace the image and title with data from the json body */}
