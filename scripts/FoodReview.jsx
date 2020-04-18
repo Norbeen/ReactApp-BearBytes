@@ -56,7 +56,8 @@ function Rating(props){
     return(
     <img src="https://i.ibb.co/K97vCGR/5Rating.png" alt="Rating" style={{width:"40%", marginLeft: "auto", marginRight: "auto", display: "block"}}/>
     )
-  } 
+  }
+  return(<h3 style={{color: "#0B76F4", width: "80%", marginLeft:"auto", marginRight: "auto"}}>(Rating unavailable)</h3>)
 }
 
 function FoodInformation(props){
@@ -96,7 +97,7 @@ export class FoodReview extends React.Component {
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}
       <div style={{paddingTop: "40px"}}></div>
-      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={4} reviewCount={1}  />
+      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={20} reviewCount={1}  />
       {reviewHeader}
       <SendReview />
   		<div style={{ paddingTop:"3%"}} />
