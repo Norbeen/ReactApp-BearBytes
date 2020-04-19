@@ -20,13 +20,44 @@ function NavigationBar(props){
 }
 
 function Rating(props){
-  return(
-    <div>
-    <img src='https://i.ibb.co/qr7QcSn/4Rating.png' alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
-    </div>
-    );
-}
+  if(props.rating == 0){
+    return(
+      <img src="https://i.ibb.co/89PP1RD/0Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+      )
+  } 
+  
+  if(props.rating == 1){
+    return(
+    <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+    )
+  } 
+  
+  if(props.rating == 2){
+    return(
+    <img src="https://i.ibb.co/9hPds0L/2Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+    )
+  } 
+  
+  if(props.rating == 3){
+    return(
+    <img src="https://i.ibb.co/1Rq3tcb/3Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+    )
+  } 
+  
+  if(props.rating == 4){
+    return(
+    <img src="https://i.ibb.co/qr7QcSn/4Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+    )
+  } 
+  
+  if(props.rating == 5){
+    return(
+    <img src="https://i.ibb.co/K97vCGR/5Rating.png" alt="Rating" style={{paddingBottom: "5%", width:"60%"}}/>
+    )
+  }
+  return(<p style={{color: "#0B76F4", width: "80%", marginLeft:"auto", marginRight: "auto"}}>(Rating unavailable)</p>)
 
+}
 function FoodCard(props){
   return( 
   <a href="/review">
@@ -35,7 +66,7 @@ function FoodCard(props){
       <img src={props.image} alt="Food Item" style={{width:"200px", height:"200px", paddingTop: "5%", objectFit: "cover"}}/>
       <h5 style={{color: "#F46311"}}>{props.title}</h5>
       <Rating 
-        //rating={props.rating}
+        rating={props.rating}
         />
     </div>
     </div>
@@ -89,6 +120,7 @@ export class Content extends React.Component {
             <FoodCard 
              image={bf_item.bf_imageLink} title={bf_item.bf_title}
             // rating={bf_item.bf_averageRating}
+            rating={3}
             />
         )}
         </div>
@@ -99,6 +131,7 @@ export class Content extends React.Component {
             <FoodCard 
              image={lunch_item.lunch_imageLink} title={lunch_item.lunch_title}
             //rating={lunch_item.lunch_averageRating}
+            rating={5}
             />
         )}
         </div>
@@ -109,6 +142,7 @@ export class Content extends React.Component {
           <FoodCard 
           image={dinner_item.din_imageLink} title={dinner_item.din_title} 
           //rating={dinner_item.din_averageRating}
+          rating={4}
           />
         )}
         </div>
