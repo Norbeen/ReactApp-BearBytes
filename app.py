@@ -6,10 +6,8 @@ from requests import *
 #request = google.auth.transport.requests.Request()
 
 
-
 app = flask.Flask(__name__)
-
-socketio = flask_socketio.SocketIO(app)
+socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
@@ -28,6 +26,7 @@ def hi():
 # image_parsed = passed_list[2]
 
 # socketio.emit('json_file', {'parsed_data': title_parsed})
+
 @socketio.on('connect') 
 def on_connect():
     #menu = models.menu.query.all()
@@ -38,6 +37,10 @@ def load_menu():
     socketio.emit('get_data', {
         'data' : menu 
     })
+    
+@socketio.on('new review')
+def on_new_review(data):
+    print("Got an event for new message with data:", data)
   
 @socketio.on('disconnect')
 def on_disconnect():

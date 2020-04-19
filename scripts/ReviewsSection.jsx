@@ -91,18 +91,18 @@ export class ReviewsSection extends React.Component {
     render() {
         return (
     <div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons" style={{backgroundColor:"#F46311"}}>
+        <div className="btn-group btn-group-toggle" data-toggle="buttons" style={{backgroundColor:"#F46311", width:"100%"}}>
             <label className="btn btn-secondary active segmented-control">
-              <input type="radio" name="newest" id="1" autocomplete="off" checked/> Newest
+              <input type="radio" name="newest" id="1" autoComplete="off" defaultChecked/> Newest
             </label>
             <label className="btn btn-secondary segmented-control">
-              <input type="radio" name="popular" id="2" autocomplete="off"/> Most Popular
+              <input type="radio" name="popular" id="2" autoComplete="off"/> Most Popular
             </label>
             <label className="btn btn-secondary segmented-control">
-              <input type="radio" name="positive" id="3" autocomplete="off"/> Most Positive
+              <input type="radio" name="positive" id="3" autoComplete="off"/> Most Positive
             </label>
             <label className="btn btn-secondary segmented-control">
-              <input type="radio" name="critical" id="4" autocomplete="off"/> Most Critical
+              <input type="radio" name="critical" id="4" autoComplete="off"/> Most Critical
             </label>
         </div>
         <div className="w3-row-padding w3-center">
