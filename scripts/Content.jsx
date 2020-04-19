@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Socket } from './Socket';
+import { GoogleSignin } from './GoogleSignin';
 
 function NavigationBar(props){
   return(
@@ -12,6 +13,7 @@ function NavigationBar(props){
 					<ul className="nav navbar-nav navbar-right">
 						<li><a href="/" >Rawlings Dining Hall</a></li>
 						<li><a href="#gallery">Canteen</a></li>
+						<li> <GoogleSignin /> </li>
 					</ul>
 				</div>
 			</div>
