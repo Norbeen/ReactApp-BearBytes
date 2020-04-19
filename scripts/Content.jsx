@@ -32,7 +32,7 @@ function FoodCard(props){
   <a href="/review">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
-      <img src={props.image} alt="Food Item" style={{width:"70%", paddingTop: "5%", objectFit: "cover"}}/>
+      <img src={props.image} alt="Food Item" style={{width:"200px", height:"200px", paddingTop: "5%", objectFit: "cover"}}/>
       <h5 style={{color: "#F46311"}}>{props.title}</h5>
       <Rating 
         //rating={props.rating}
