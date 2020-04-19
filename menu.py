@@ -1,6 +1,5 @@
 import json
 import models
-import dining
 
 
 f = open('dining.json')
