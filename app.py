@@ -85,9 +85,9 @@ def on_new_review(data):
 #     send_sms(number_received)
     
 #     # Your Account SID from twilio.com/console
-#     account_sid = "AC62fd1dbf8bf472541849d018aea741e0"
+#     account_sid = os.environ['TWILIO_ACCOUNT_SID']
 #     # Your Auth Token from twilio.com/console
-#     auth_token  = "2c189e5fda9fa663777338000b580573"
+#     auth_token  = "TWILIO_AUTH_TOKEN"
 
 #     client = Client(account_sid, auth_token)
 #     number = userNumber
