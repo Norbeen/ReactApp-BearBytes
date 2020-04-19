@@ -6,21 +6,18 @@ from requests import *
 #request = google.auth.transport.requests.Request()
 
 
-
 app = flask.Flask(__name__)
-
-socketio = flask_socketio.SocketIO(app)
+socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
 @app.route('/')
 def hello():
     return flask.render_template('index.html')
-    
+
 @app.route('/review')
 def hi():
     return flask.render_template('index.html')
-
 
 @socketio.on('connect') 
 def on_connect():
@@ -68,6 +65,10 @@ def on_connect():
         'dinner_items' : dinner_list
     })
     
+@socketio.on('new review')
+def on_new_review(data):
+    print("Got an event for new message with data:", data)
+
 @socketio.on('disconnect')
 def on_disconnect():
     print('Someone disconnected!')

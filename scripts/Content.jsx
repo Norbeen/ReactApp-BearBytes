@@ -29,16 +29,14 @@ function Rating(props){
 
 function FoodCard(props){
   return( 
-  <a a href="/review">
-  <div className="w3-row-padding w3-center">
+  <a href="/review">
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
-        <img src={props.image} alt="Food Item" style={{width:"70%", paddingTop: "5%"}}/>
-        <h5 style={{color: "#F46311"}}> {props.title} </h5>
-        <Rating 
+      <img src={props.image} alt="Food Item" style={{width:"70%", paddingTop: "5%", objectFit: "cover"}}/>
+      <h5 style={{color: "#F46311"}}>{props.title}</h5>
+      <Rating 
         //rating={props.rating}
         />
-      </div>
     </div>
     </div>
   </a>
@@ -79,34 +77,41 @@ export class Content extends React.Component {
         <div>
 		    <NavigationBar />
 		
-    	{/*Creates margins for our cards */}
+    	  {/*Creates margins for our page content */}
         <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
-       {/*Creates padding so title starts under navigation bar*/}
+        {/*Creates padding so title starts under navigation bar*/}
         <div style={{paddingTop: "40px"}}></div>
     
+
         {breakfastHeader}
+        <div className="w3-row-padding w3-center">
         { breakfast_items.map ( bf_item =>
             <FoodCard 
              image={bf_item.bf_imageLink} title={bf_item.bf_title}
-            // rating={item.averageRating}
+            // rating={bf_item.bf_averageRating}
             />
-        )}  
+        )}
+        </div>
         
-       {/*lunchHeader}
+       {lunchHeader}
+      <div className="w3-row-padding w3-center">
        { lunch_items.map ( lunch_item =>
             <FoodCard 
              image={lunch_item.lunch_imageLink} title={lunch_item.lunch_title}
-            //rating={item.averageRating}
+            //rating={lunch_item.lunch_averageRating}
             />
         )}
+        </div>
         
         {dinnerHeader}
+        <div className="w3-row-padding w3-center">
         { dinner_items.map ( dinner_item =>
           <FoodCard 
-          image={dinner_item.din_imageLink} title={item.din_title} 
-          //rating={item.averageRating}
+          image={dinner_item.din_imageLink} title={dinner_item.din_title} 
+          //rating={dinner_item.din_averageRating}
           />
-        )*/}
+        )}
+        </div>
       </div>
     </div>)
     }

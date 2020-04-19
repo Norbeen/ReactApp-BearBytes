@@ -30,6 +30,7 @@ http://www.tooplate.com/view/2076-zentro
 }
 
 .food-card {
+  width: 90%;
   padding-top: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -43,4 +44,56 @@ http://www.tooplate.com/view/2076-zentro
 .food-time-header {
   color: #F46311;
   text-align:center;
+}
+
+.food-review-header {
+  color: #F46311;
+  text-align:left;
+}
+
+.review-form {
+  width: 100%;
+  height: 163px;
+  
+  background: #FAFAFA;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.review-button {
+  width: 156px;
+  height: 47px;
+  padding-top: 0px;
+  cursor: pointer;
+  color: white;
+  float: right;
+  
+  background: #F46311;
+}
+
+.review-button:hover {
+  background: #E86013;
+}
+
+.segmented-control {
+  align-items: center;
+  height:50px;
+  width:25%;
+  border: none;
+  background-color: Transparent;
+  color: white;
+}
+
+.segmented-control:hover {
+  background: #E86013;
+  color: white;
+}
+
+.review-divider {
+  height: 0px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  border: 1px solid #F46311;
 }
