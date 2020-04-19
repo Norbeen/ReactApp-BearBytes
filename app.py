@@ -6,39 +6,69 @@ from requests import *
 #request = google.auth.transport.requests.Request()
 
 
-
 app = flask.Flask(__name__)
-
-socketio = flask_socketio.SocketIO(app)
+socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
 @app.route('/')
 def hello():
     return flask.render_template('index.html')
-    
+
 @app.route('/review')
 def hi():
     return flask.render_template('index.html')
 
-# json_list = combined_list()
-# title_parsed =json_list[0]
-# title_parsed =passed_list[0]
-# calorie_parsed = passed_list[1]
-# image_parsed = passed_list[2]
-
-# socketio.emit('json_file', {'parsed_data': title_parsed})
 @socketio.on('connect') 
 def on_connect():
-    #menu = models.menu.query.all()
     print('Someone connected!')
+    breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
+    lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
+    dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
+    breakfast_list = []
+    lunch_list = []
+    dinner_list = []
+    for bf_item in breakfast_data:
+        breakfast_list.append({
+            'bf_title' : bf_item.Utitle,
+            'bf_averageRating' : bf_item.Urating,
+            'bf_calories' : bf_item.Unutrition,
+            'bf_reviews' : bf_item.Ureviews,
+            'bf_time' : bf_item.Utypes,
+            'bf_location' : bf_item.Ulocation,
+            'bf_imageLink' : bf_item.Uimage
+            }) 
+    for lunch_item in lunch_data:
+        lunch_list.append({
+            'lunch_title' : lunch_item.Utitle,
+            'lunch_averageRating' : lunch_item.Urating,
+            'lunch_calories' : lunch_item.Unutrition,
+            'lunch_reviews' : lunch_item.Ureviews,
+            'lunch_time' : lunch_item.Utypes,
+            'lunch_location' : lunch_item.Ulocation,
+            'lunch_imageLink' : lunch_item.Uimage
+            })
+    for dinner_item in dinner_data:
+            dinner_list.append({
+            'din_title' : dinner_item.Utitle,
+            'din_averageRating' : dinner_item.Urating,
+            'din_calories' : dinner_item.Unutrition,
+            'din_reviews' : dinner_item.Ureviews,
+            'din_time' : dinner_item.Utypes,
+            'din_location' : dinner_item.Ulocation,
+            'din_imageLink' : dinner_item.Uimage
+        })
     
-@socketio.on('load_menu')
-def load_menu():
-    socketio.emit('get_data', {
-        'data' : menu 
+    socketio.emit('menu loaded' , {
+        'breakfast_items': breakfast_list,
+        'lunch_items' : lunch_list,
+        'dinner_items' : dinner_list
     })
-  
+    
+@socketio.on('new review')
+def on_new_review(data):
+    print("Got an event for new message with data:", data)
+
 @socketio.on('disconnect')
 def on_disconnect():
     print('Someone disconnected!')
