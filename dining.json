@@ -13,7 +13,7 @@
         "title": "Pork Bacon",
         "calories": "2 slices(87 cal)",
         "types": "breakfast",
-        "image": " https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
+        "image": "https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
         "days":["Monday", "Thursday"]
       },
       {
@@ -243,13 +243,6 @@
         "calories": " 1 ea(83 cal)",
         "types": "lunch",
         "image": "https://images.unsplash.com/photo-1585941479819-ce92ab8167fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyNDgyN30",
-        "days":["Monday"]
-      },
-      {
-        "title": "Pork Bacon ",
-        "calories": " 2 slices(87 cal)",
-        "types": "lunch",
-        "image": "https://www.fifteenspatulas.com/wp-content/uploads/2018/06/Cooking-Bacon-In-The-oven-Fifteen-Spatulas-1-640x959.jpg",
         "days":["Monday"]
       },
       {
@@ -699,13 +692,6 @@
         "calories": "2 ea(180 cal) ",
         "types": "dinner",
         "image": "https://dmi4pvc5gbhhd.cloudfront.net/CACHE/images/nuggets/306cb93dfe00a4de6c571edcdb755d0e.jpg",
-        "days":["Wednesday"]
-      },
-      {
-        "title": "Vegetarian Collard Greens ",
-        "calories": "4oz (63.2 cal) ",
-        "types": "dinner",
-        "image": "https://www.seriouseats.com/recipes/images/2017/02/20170217-vegan-collard-greens-vicky-wasik-6-1500x1125.jpg",
         "days":["Wednesday"]
       },
       {
