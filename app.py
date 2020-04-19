@@ -1,5 +1,6 @@
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
+# from twilio.rest import Client
 #from google.oauth2 import id_token
 #import google.auth.transport.requests
 #from google.auth.transport import requests
@@ -65,13 +66,42 @@ def on_connect():
         'dinner_items' : dinner_list
     })
     
+
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)
+    
+
+# Add the phone number to Twilio function to send link to our website
+
+# @socketio.on('user phone')
+# def get_number(number):
+#     print("Got an event for user phone number with number:", number)
+    
+#     # initialize user_number in constructor to receive user number
+#     number_received= number['user_number']
+#     formatted_number= "+1"+ number_received
+#     print(formatted_number)
+#     send_sms(number_received)
+    
+#     # Your Account SID from twilio.com/console
+#     account_sid = "AC62fd1dbf8bf472541849d018aea741e0"
+#     # Your Auth Token from twilio.com/console
+#     auth_token  = "2c189e5fda9fa663777338000b580573"
+
+#     client = Client(account_sid, auth_token)
+#     number = userNumber
+#     message = client.messages.create(
+#     to=number, 
+#     from_="+14243970214",
+#     body="https://www.wikipedia.org/")
+    
+    
 
 @socketio.on('disconnect')
 def on_disconnect():
     print('Someone disconnected!')
+
 
 
 if __name__ == '__main__':
