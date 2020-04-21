@@ -97,7 +97,7 @@ export class FoodReview extends React.Component {
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}
       <div style={{paddingTop: "40px"}}></div>
-      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={2} reviewCount={1}  />
+      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={5} reviewCount={1}  />
       {reviewHeader}
       <SendReview />
   		<div style={{ paddingTop:"3%"}} />
