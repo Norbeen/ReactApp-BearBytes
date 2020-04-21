@@ -3,8 +3,8 @@ import os, flask, flask_socketio, flask_sqlalchemy
 from google.oauth2 import id_token
 from google.auth.transport import requests
 
-# from sendgrid import SendGridAPIClient
-# from sendgrid.helpers.mail import Mail
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
@@ -120,21 +120,19 @@ def google_information(token):
     except ValueError:
         print("Invalid token")
         
-# def send_email():     
-#     message = Mail(
-#     from_email='nabar14@morgan.edu',
-#     to_emails= googleEmail,
-#     subject='Save this cafeterial link!!',
-#     html_content='<strong>and easy to do anywhere, even with Python</strong>')
-    
-#     try:
-#         sg = SendGridAPIClient('')
-#         response = sg.send(message)
-#         print(response.status_code)
-#         print(response.body)
-#         print(response.headers)
-#     except Exception as e:
-#         print('error')
+    message = Mail(
+    from_email='norbeen7@gmail.com',
+    to_emails='nabar14@morgan.edu',
+    subject='Sending with Twilio SendGrid is Fun',
+    html_content='<strong>and easy to do anywhere, even with Python</strong>')
+    try:
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(e)
 
 if __name__ == '__main__':
     socketio.run(
