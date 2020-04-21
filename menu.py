@@ -1,6 +1,6 @@
 import json
 import models
-
+import psycopg2
 
 f = open('dining.json')
 menu = json.load(f)
