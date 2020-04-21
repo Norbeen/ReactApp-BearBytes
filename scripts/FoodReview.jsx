@@ -2,24 +2,8 @@ import * as React from 'react';
 import { Socket } from './Socket';
 import { ReviewsSection } from './ReviewsSection'
 import { SendReview } from './SendReview'
+import { NavigationBar } from './Content'
 
-function NavigationBar(props){
-  return(
-  <section className="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div className="container">
-				<div className="navbar-header">
-					<a href="/" className="navbar-brand">BearBites</a>
-				</div>
-				<div className="collapse navbar-collapse">
-					<ul className="nav navbar-nav navbar-right">
-						<li><a href="/" >Rawlings Dining Hall</a></li>
-						<li><a href="#gallery">Canteen</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	)
-}
 
 function Rating(props){
   if(props.rating == 0){

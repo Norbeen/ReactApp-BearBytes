@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Socket } from './Socket';
 import { GoogleSignin } from './GoogleSignin';
 
-function NavigationBar(props){
+export function NavigationBar(props){
   return(
   <section className="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div className="container">
