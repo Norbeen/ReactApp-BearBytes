@@ -120,19 +120,20 @@ def google_information(token):
     except ValueError:
         print("Invalid token")
         
-    message = Mail(
-    from_email='norbeen7@gmail.com',
-    to_emails='nabar14@morgan.edu',
-    subject='Sending with Twilio SendGrid is Fun',
-    html_content='<strong>and easy to do anywhere, even with Python</strong>')
-    try:
-        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-        response = sg.send(message)
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-    except Exception as e:
-        print(e)
+# ***************************  Twilio SMS API  **********************************************************
+    #     message = Mail(
+    #     from_email='norbeen7@gmail.com',
+    #     to_emails=googleEmail,
+    #     subject='Sending with Twilio SendGrid is Fun',
+    #     html_content='<strong>Testing email</strong>')
+    # try:
+    #     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+    #     response = sg.send(message)
+    #     print(response.status_code)
+    #     print(response.body)
+    #     print(response.headers)
+    # except Exception as e:
+    #     print(e)
 
 if __name__ == '__main__':
     socketio.run(
