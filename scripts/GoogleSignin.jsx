@@ -15,8 +15,8 @@ export class GoogleSignin extends React.Component{
       console.log("google token" + user.getAuthResponse().id_token);
     }
     console.log("user:", googleUser)
-  Socket.emit('user', {
-      'user': [googleUser, user.getAuthResponse().id_token]
+  Socket.emit('google token', {
+      'user_token':user.getAuthResponse().id_token
     });
   }
 

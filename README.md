@@ -20,10 +20,10 @@ This app will depend on the menu of Morgan State University’s cafeteria as it 
 
 ## User Stories
 The following **required** user stories are complete:
-- [ ] As a user, I should be able to login with google, so that my credentials allow me to interact with the application.
+- [x] As a user, I should be able to login with google, so that my credentials allow me to interact with the application.
 - [x] As a user, I should be able to see the menu for the day, so I can make an informed decision on where I should eat 
 - [x] As a user, I should be able to see ratings for menu items, so I can make an so I can rank what options I'd like to eat in case one food item is out
-- [ ] As a user, I should be able to see comments for menu items, so I can make an informed decision on what I should eat 
+- [x] As a user, I should be able to see comments for menu items, so I can make an informed decision on what I should eat 
 - [ ] As a user,  I should be able to post comments and ratings for menu items, so I can help other users make an informed decision on what they should eat  
 - [ ] As a user, I should be able to like/dislike comments for menu items, so I can cosign on previous comments and don’t have to write my own 
 - [ ] As a user, I should be able to see the top rated foods for the day, so I can quickly see the best options 
