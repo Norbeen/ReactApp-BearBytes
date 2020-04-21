@@ -1,10 +1,10 @@
 import os, flask, flask_socketio, flask_sqlalchemy 
-from requests import *
-# from twilio.rest import Client
+
 from google.oauth2 import id_token
 from google.auth.transport import requests
-#request = google.auth.transport.requests.Request()
 
+# from sendgrid import SendGridAPIClient
+# from sendgrid.helpers.mail import Mail
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
@@ -19,9 +19,18 @@ def hello():
 def hi():
     return flask.render_template('index.html')
 
+# Check the disconnect status
+
+@socketio.on('disconnect')
+def on_disconnect(data):
+    socketio.emit('disconnecting', {
+        'disconnect status': data["I am disconnecting"]
+    })
+
+#Check the connect status
+
 @socketio.on('connect') 
-def on_connect():
-    print('Someone connected!')
+def on_connected():
     breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
     lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
     dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
@@ -65,43 +74,67 @@ def on_connect():
         'dinner_items' : dinner_list
     })
     
+#Receive the food reveiws from client
 
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)
     
 
-# Add the phone number to Twilio function to send link to our website
+# Declaring oogle Variables 
 
-# @socketio.on('user phone')
-# def get_number(number):
-#     print("Got an event for user phone number with number:", number)
+googleImage = ""
+googleName = "" 
+googleEmail = ""
+
+#  #***********************  verification of the user signed in with the google *****************
+@socketio.on('google token')
+def google_information(token):
     
-#     # initialize user_number in constructor to receive user number
-#     number_received= number['user_number']
-#     formatted_number= "+1"+ number_received
-#     print(formatted_number)
-#     send_sms(number_received)
+    print ("Got an event for GOOGLE TOKEN ID: "+ str(token['user_token']))
     
-#     # Your Account SID from twilio.com/console
-#     account_sid = os.environ['TWILIO_ACCOUNT_SID']
-#     # Your Auth Token from twilio.com/console
-#     auth_token  = "TWILIO_AUTH_TOKEN"
-
-#     client = Client(account_sid, auth_token)
-#     number = userNumber
-#     message = client.messages.create(
-#     to=number, 
-#     from_="+14243970214",
-#     body="https://www.wikipedia.org/")
+    try:
+        CLIENT_ID = '120440974471-c3v5k5h966i0jdei02gmut1gar1l1ple.apps.googleusercontent.com'
+        print(token['user_token'])
+        idinfo = id_token.verify_oauth2_token(token['user_token'], requests.Request(), CLIENT_ID)
+        print(idinfo['iss'])
     
+        if idinfo['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
+            raise ValueError('Wrong issuer.')
+            
+        #**************** After verification getting the user id.     ************************
+        userid = idinfo['sub']
+        print(idinfo)
+        
+        # ***************** Declaring global variable for name and image extracted from google ********
+       
+        global googleImage
+        googleImage= idinfo['picture']
+        
+        global googleName
+        googleName = idinfo['name']
+        
+        global googleEmail
+        googleEmail = idinfo['email']
     
-
-@socketio.on('disconnect')
-def on_disconnect():
-    print('Someone disconnected!')
-
-
+    except ValueError:
+        print("Invalid token")
+        
+# def send_email():     
+#     message = Mail(
+#     from_email='nabar14@morgan.edu',
+#     to_emails= googleEmail,
+#     subject='Save this cafeterial link!!',
+#     html_content='<strong>and easy to do anywhere, even with Python</strong>')
+    
+#     try:
+#         sg = SendGridAPIClient('')
+#         response = sg.send(message)
+#         print(response.status_code)
+#         print(response.body)
+#         print(response.headers)
+#     except Exception as e:
+#         print('error')
 
 if __name__ == '__main__':
     socketio.run(
