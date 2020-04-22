@@ -5,7 +5,6 @@ import os, flask, flask_socketio
 
 # Send email upon successful login with google 
 
-
 def message_sent(googleName, googleEmail): 
     
     try:
@@ -24,3 +23,14 @@ def message_sent(googleName, googleEmail):
         print("email sent successfully")
     except:
         print("email failed to send")
+
+        
+def user_name(name, email):
+    return name
+    
+def user_email(name, email):
+    return email
+
+def user_loggedIn(user_status):
+    return user_status
+    
