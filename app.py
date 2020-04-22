@@ -1,13 +1,9 @@
-import os, flask, flask_socketio, flask_sqlalchemy 
-from requests import *
-# from twilio.rest import Client
-#from google.oauth2 import id_token
-#from google.auth.transport import requests
-#request = google.auth.transport.requests.Request()
+import os, flask, flask_socketio, flask_sqlalchemy,smtplib
 
 #from google.oauth2 import id_token
 #from google.auth.transport import requests
-import smtplib
+import send_sms as send
+
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
@@ -89,6 +85,7 @@ def on_new_review(data):
 googleImage = ""
 googleName = "" 
 googleEmail = ""
+canSendSms= False
 
 #  #***********************  verification of the user signed in with the google *****************
 @socketio.on('google token')
@@ -119,27 +116,22 @@ def google_information(token):
         
         global googleEmail
         googleEmail = idinfo['email']
+        
+        global canSendSms 
+        canSendSms= True
     
     except ValueError:
         print("Invalid token")
         
-# ********************************** Script to send email with the link *********************************************
-    try:
-        subject= 'Save this link to checkout our website!!'
-        msg = 'Dear ' + str(googleName) + ', '+  '\n\nPlease checkout the morgan dining website to see what is being served today. \n\nhttp://bear-bites.herokuapp.com/\n\n Thank you!'
-        server =smtplib.SMTP('smtp.gmail.com:587')
-        server.ehlo()
-        server.starttls()
-        
-        # This EMAIL AND PASS is an environment variable already setup in heroku, for testing use your email and pass as string 
-        
-        server.login(EMAIL, PASS)
-        message = 'Subject:{}\n\n{}'.format(subject,msg)
-        server.sendmail(googleEmail, googleEmail,message)
-        server.quit()
-        print("email sent successfully")
-    except:
-        print("email failed to send")
+    # calls this function only when the signin is set to true 
+    
+    
+    if (canSendSms):
+        send.message_sent(googleName, googleEmail)
+    else:
+        print("Error sending email")
+
+
 
 if __name__ == '__main__':
     socketio.run(
