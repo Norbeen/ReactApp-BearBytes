@@ -90,48 +90,42 @@ canSendSms= False
 #  #***********************  verification of the user signed in with the google *****************
 @socketio.on('google token')
 def google_information(token):
-    
     print ("Got an event for GOOGLE TOKEN ID: "+ str(token['user_token']))
     
-    try:
-        CLIENT_ID = '120440974471-c3v5k5h966i0jdei02gmut1gar1l1ple.apps.googleusercontent.com'
-        print(token['user_token'])
-        idinfo = id_token.verify_oauth2_token(token['user_token'], requests.Request(), CLIENT_ID)
-        print(idinfo['iss'])
-    
-        if idinfo['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
-            raise ValueError('Wrong issuer.')
-            
-        #**************** After verification getting the user id.     ************************
+    #**************** After verification getting the user id.     ************************
+    if is_valid_token(token['user_token']):
+        idinfo = is_valid_token(token['user_token'])
         userid = idinfo['sub']
         print(idinfo)
         
         # ***************** Declaring global variable for name and image extracted from google ********
-       
-        global googleImage
         googleImage= idinfo['picture']
-        
-        global googleName
         googleName = idinfo['name']
-        
-        global googleEmail
         googleEmail = idinfo['email']
         
         global canSendSms 
         canSendSms= True
-    
-    except ValueError:
-        print("Invalid token")
-        
-    # calls this function only when the signin is set to true 
-    
     
     if (canSendSms):
         send.message_sent(googleName, googleEmail)
     else:
         print("Error sending email")
 
+def is_valid_token(token):
+    try:
+        # Specify the CLIENT_ID of the app that accesses the backend:
+        CLIENT_ID = '120440974471-c3v5k5h966i0jdei02gmut1gar1l1ple.apps.googleusercontent.com'
+        idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
+        print("id info:",idinfo['iss'])
+        if idinfo['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
+            raise ValueError('Wrong issuer.')
+        return idinfo
 
+    except ValueError:
+        if token == os.getenv('dummy_token'):
+            return True
+        print('Invalid token')
+        return False
 
 if __name__ == '__main__':
     socketio.run(
