@@ -15,8 +15,8 @@ export class GoogleSignin extends React.Component{
       console.log("google token" + user.getAuthResponse().id_token);
     }
     console.log("user:", googleUser)
-  Socket.emit('user', {
-      'user': [googleUser, user.getAuthResponse().id_token]
+  Socket.emit('google token', {
+      'user_token':user.getAuthResponse().id_token
     });
   }
 
@@ -25,7 +25,13 @@ export class GoogleSignin extends React.Component{
       <div id="google-login">
       <GoogleLogin
           clientId="120440974471-c3v5k5h966i0jdei02gmut1gar1l1ple.apps.googleusercontent.com"
-          buttonText="Login with Google"
+          render={renderProps => (
+            <button onClick={renderProps.onClick} disabled={renderProps.disabled} 
+            style={{backgroundColor: "Transparent", color: "white", 
+            border: "none", paddingTop:"30%", fontSize: "12px", lineHeight:"28px"}}>
+              SignIn
+            </button>
+          )}
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
           cookiePolicy={'single_host_origin'}

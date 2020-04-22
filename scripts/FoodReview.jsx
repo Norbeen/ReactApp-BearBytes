@@ -2,24 +2,8 @@ import * as React from 'react';
 import { Socket } from './Socket';
 import { ReviewsSection } from './ReviewsSection'
 import { SendReview } from './SendReview'
+import { NavigationBar } from './Content'
 
-function NavigationBar(props){
-  return(
-  <section className="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div className="container">
-				<div className="navbar-header">
-					<a href="/" className="navbar-brand">BearBites</a>
-				</div>
-				<div className="collapse navbar-collapse">
-					<ul className="nav navbar-nav navbar-right">
-						<li><a href="/" >Rawlings Dining Hall</a></li>
-						<li><a href="#gallery">Canteen</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	)
-}
 
 function Rating(props){
   if(props.rating == 0){
@@ -97,7 +81,7 @@ export class FoodReview extends React.Component {
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}
       <div style={{paddingTop: "40px"}}></div>
-      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={2} reviewCount={1}  />
+      <FoodInformation title={"Jollof Rice"} nutri={"1/2 cup(101.6 cal)"} rating={5} reviewCount={1}  />
       {reviewHeader}
       <SendReview />
   		<div style={{ paddingTop:"3%"}} />

@@ -2,17 +2,17 @@ import * as React from 'react';
 import { Socket } from './Socket';
 import { GoogleSignin } from './GoogleSignin';
 
-function NavigationBar(props){
+export function NavigationBar(props){
   return(
   <section className="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div className="container">
 				<div className="navbar-header">
-					<a href="#" className="navbar-brand">BearBites</a>
+					<a href="/" className="navbar-brand">BearBites</a>
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">
 						<li><a href="/" >Rawlings Dining Hall</a></li>
-						<li><a href="#gallery">Canteen</a></li>
+						<li><a href="/">Canteen</a></li>
 						<li> <GoogleSignin /> </li>
 					</ul>
 				</div>
