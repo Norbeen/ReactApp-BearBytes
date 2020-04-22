@@ -99,12 +99,18 @@ def google_information(token):
         print(idinfo)
         
         # ***************** Declaring global variable for name and image extracted from google ********
+        global googleImage
         googleImage= idinfo['picture']
+        
+        global googleName
         googleName = idinfo['name']
+        
+        global googleEmail
         googleEmail = idinfo['email']
         
         global canSendSms 
         canSendSms= True
+    
     
     if (canSendSms):
         send.message_sent(googleName, googleEmail)
