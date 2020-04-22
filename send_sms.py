@@ -17,7 +17,7 @@ def message_sent(googleName, googleEmail):
         
         # This EMAIL AND PASS is an environment variable already setup in heroku, for testing use your email and pass as string 
         
-        server.login('morganstatedining@gmail.com', 'Baltimore123$')
+        server.login(EMAIL, PASS)
         message = 'Subject:{}\n\n{}'.format(subject,msg)
         server.sendmail(googleEmail, googleEmail,message)
         server.quit()
