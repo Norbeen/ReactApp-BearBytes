@@ -18,13 +18,13 @@ def hello():
 def hi():
     return flask.render_template('index.html')
 
-# Check the disconnect status
+#Check the disconnect status
 
-# @socketio.on('disconnect')
-# def on_disconnect(data):
-#     socketio.emit('disconnecting', {
-#         'disconnect status': data["I am disconnecting"]
-#     })
+@socketio.on('disconnect')
+def on_disconnect(data):
+    socketio.emit('disconnecting', {
+        'disconnect status': data["I am disconnecting"]
+    })
 
 
 
@@ -130,8 +130,6 @@ def google_information(token):
         send.message_sent(googleName, googleEmail)
     else:
         print("Error sending email")
-
-
 
 if __name__ == '__main__':
     socketio.run(
