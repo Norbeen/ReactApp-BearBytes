@@ -1,17 +1,13 @@
 import os, flask, flask_socketio, flask_sqlalchemy 
-<<<<<<< HEAD
 from requests import *
 # from twilio.rest import Client
 #from google.oauth2 import id_token
 #from google.auth.transport import requests
 #request = google.auth.transport.requests.Request()
 
-=======
-
-from google.oauth2 import id_token
-from google.auth.transport import requests
+#from google.oauth2 import id_token
+#from google.auth.transport import requests
 import smtplib
->>>>>>> 3729615696e338663e98dc77bf1c803365d7ff3e
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
