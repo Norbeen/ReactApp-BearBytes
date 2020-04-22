@@ -2,9 +2,7 @@ import os, flask, flask_socketio, flask_sqlalchemy
 
 from google.oauth2 import id_token
 from google.auth.transport import requests
-
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+import smtplib
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
@@ -21,17 +19,16 @@ def hi():
 
 # Check the disconnect status
 
-@socketio.on('disconnect')
-def on_disconnect(data):
-    socketio.emit('disconnecting', {
-        'disconnect status': data["I am disconnecting"]
-    })
+# @socketio.on('disconnect')
+# def on_disconnect(data):
+#     socketio.emit('disconnecting', {
+#         'disconnect status': data["I am disconnecting"]
+#     })
 
-#Check the connect status
+
 
 @socketio.on('connect') 
 def on_connected():
-    print('Someone connected!')
     breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
     lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
     dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
@@ -121,20 +118,23 @@ def google_information(token):
     except ValueError:
         print("Invalid token")
         
-# ***************************  Twilio SMS API  **********************************************************
-    #     message = Mail(
-    #     from_email='norbeen7@gmail.com',
-    #     to_emails=googleEmail,
-    #     subject='Sending with Twilio SendGrid is Fun',
-    #     html_content='<strong>Testing email</strong>')
-    # try:
-    #     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-    #     response = sg.send(message)
-    #     print(response.status_code)
-    #     print(response.body)
-    #     print(response.headers)
-    # except Exception as e:
-    #     print(e)
+# ********************************** Script to send email with the link *********************************************
+    try:
+        subject= 'Save this link to checkout our website!!'
+        msg = 'Dear ' + str(googleName) + ', '+  '\n\nPlease checkout the morgan dining website to see what is being served today. \n\nhttp://bear-bites.herokuapp.com/\n\n Thank you!'
+        server =smtplib.SMTP('smtp.gmail.com:587')
+        server.ehlo()
+        server.starttls()
+        
+        # This EMAIL AND PASS is an environment variable already setup in heroku, for testing use your email and pass as string 
+        
+        server.login(EMAIL, PASS)
+        message = 'Subject:{}\n\n{}'.format(subject,msg)
+        server.sendmail(googleEmail, googleEmail,message)
+        server.quit()
+        print("email sent successfully")
+    except:
+        print("email failed to send")
 
 if __name__ == '__main__':
     socketio.run(
