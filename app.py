@@ -1,8 +1,8 @@
 import os, flask, flask_socketio, flask_sqlalchemy 
 from requests import *
 # from twilio.rest import Client
-from google.oauth2 import id_token
-from google.auth.transport import requests
+#from google.oauth2 import id_token
+#from google.auth.transport import requests
 #request = google.auth.transport.requests.Request()
 
 
