@@ -1,4 +1,4 @@
-import os, flask, flask_socketio, flask_sqlalchemy,smtplib
+import os, flask, flask_socketio, flask_sqlalchemy,smtplib, json
 
 from google.oauth2 import id_token
 from google.auth.transport import requests
@@ -6,9 +6,17 @@ import send_sms as send
 
 
 app = flask.Flask(__name__)
-socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
+socketio = flask_socketio.SocketIO(app)
 
 import models 
+
+f = open('dining.json')
+menu = json.load(f)
+for menu_item in menu:
+    food_item = models.menuItem(menu_item['title'],0, menu_item['calories'],None, menu_item['types'],"Rawling's Dining Hall", menu_item['image'])
+    models.db.session.add(food_item)
+    models.db.session.commit()
+f.close()
 
 @app.route('/')
 def hello():
