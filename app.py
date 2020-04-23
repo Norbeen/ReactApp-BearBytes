@@ -6,7 +6,7 @@ import send_sms as send
 
 
 app = flask.Flask(__name__)
-socketio = flask_socketio.SocketIO(app)
+socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
