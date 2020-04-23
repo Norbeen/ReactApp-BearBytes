@@ -18,7 +18,7 @@ def hello():
 def hi():
     return flask.render_template('index.html')
 
-# Check the disconnect status
+#Check the disconnect status
 
 @socketio.on('disconnect')
 def on_disconnect(data):
@@ -30,6 +30,7 @@ def on_disconnect(data):
 
 @socketio.on('connect') 
 def on_connected():
+    print("somebody connected")
     breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
     lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
     dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
@@ -124,6 +125,7 @@ def google_information(token):
         send.message_sent(googleName, googleEmail)
     else:
         print("Error sending email")
+
 
 def is_valid_token(token):
     try:
