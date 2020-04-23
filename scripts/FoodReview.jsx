@@ -3,7 +3,7 @@ import { Socket } from './Socket';
 import { ReviewsSection } from './ReviewsSection'
 import { SendReview } from './SendReview'
 import { NavigationBar } from './Content'
-
+import { GoogleSignin } from './GoogleSignin';
 
 function Rating(props){
   if(props.rating == 0){
@@ -70,13 +70,25 @@ export class FoodReview extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      menu_data: []
+      menu_data: [],
+      signIn: <GoogleSignin />
     };
   }
+  
+  componentDidMount() {
+      Socket.on('logged in',(data) => {
+        console.log('user signed in')
+        this.setState({
+          signIn: <GoogleSignOut />
+        })
+      })
+      
+  }
+  
     render() {
         return (
     <div>
-		  <NavigationBar />
+		  <NavigationBar signIn={this.state.signIn} />
   		{/*Creates margins for our page content */}
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}

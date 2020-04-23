@@ -1,8 +1,22 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Socket } from './Socket';
 import { GoogleSignin } from './GoogleSignin';
+import { GoogleSignOut } from './GoogleSignOut';
 
 export function NavigationBar(props){
+  const [signIn, setSignIn] = useState(<GoogleSignin />);
+
+  Socket.on('logged in',(data) => {
+      console.log('user signed in')
+      setSignIn(
+        <div>
+          <img src={data['user']["profilePic"]} alt="profile picture" style={{height: "30px", width:"30px", borderRadius: "50%", objectFit: "cover"}}/>
+          <GoogleSignOut />
+        </div>
+        );
+    }) 
+
   return(
   <section className="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div className="container">
@@ -13,7 +27,7 @@ export function NavigationBar(props){
 					<ul className="nav navbar-nav navbar-right">
 						<li><a href="/" >Rawlings Dining Hall</a></li>
 						<li><a href="/">Canteen</a></li>
-						<li> <GoogleSignin /> </li>
+						<li> {signIn} </li>
 					</ul>
 				</div>
 			</div>
@@ -85,7 +99,8 @@ export class Content extends React.Component {
     this.state = {
       'breakfast_data': [],
       'lunch_data': [],
-      'dinner_data': []
+      'dinner_data': [],
+      signIn: false
     };
     
     this.componentDidMount = this.componentDidMount.bind(this)
@@ -93,13 +108,14 @@ export class Content extends React.Component {
   componentDidMount() {
       Socket.on('menu loaded', (data) => {
             this.setState({
-          'breakfast_data': data['breakfast_items'],
-           'lunch_data': data['lunch_items'],
-          'dinner_data' : data['dinner_items']
-        });
-      }
-      )
-      }
+              'breakfast_data': data['breakfast_items'],
+               'lunch_data': data['lunch_items'],
+              'dinner_data' : data['dinner_items']
+            });
+        })
+      
+  }
+
 
     render() {
         let breakfast_items = this.state.breakfast_data;
@@ -108,8 +124,8 @@ export class Content extends React.Component {
 
         return (
         <div>
-		    <NavigationBar />
-		
+		    <NavigationBar  />
+		    
     	  {/*Creates margins for our page content */}
         <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
         {/*Creates padding so title starts under navigation bar*/}

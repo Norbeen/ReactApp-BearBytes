@@ -22,7 +22,7 @@ export class GoogleSignin extends React.Component{
 
   render () {
     return (
-      <div id="google-login">
+      <div >
       <GoogleLogin
           clientId="120440974471-c3v5k5h966i0jdei02gmut1gar1l1ple.apps.googleusercontent.com"
           render={renderProps => (
@@ -35,6 +35,7 @@ export class GoogleSignin extends React.Component{
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
           cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
         />
       </div>
     );

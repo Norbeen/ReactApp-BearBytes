@@ -20,11 +20,11 @@ def hi():
 
 # Check the disconnect status
 
-# @socketio.on('disconnect')
-# def on_disconnect(data):
-#     socketio.emit('disconnecting', {
-#         'disconnect status': data["I am disconnecting"]
-#     })
+@socketio.on('disconnect')
+def on_disconnect(data):
+    socketio.emit('disconnecting', {
+        'disconnect status': True
+    })
 
 
 
@@ -99,11 +99,13 @@ def google_information(token):
         print(idinfo)
         
         # ***************** Declaring global variable for name and image extracted from google ********
-        global googleImage
         googleImage= idinfo['picture']
+        googleFirstName = idinfo['given_name']
         
         global googleName
         googleName = idinfo['name']
+        
+        
         
         global googleEmail
         googleEmail = idinfo['email']
@@ -111,6 +113,12 @@ def google_information(token):
         global canSendSms 
         canSendSms= True
     
+        socketio.emit('logged in' , {
+            'user':{ 
+                "name": googleFirstName,
+                "profilePic": googleImage
+                }
+        })
     
     if (canSendSms):
         send.message_sent(googleName, googleEmail)
