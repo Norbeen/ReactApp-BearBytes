@@ -102,7 +102,7 @@ export class SendReview extends React.Component {
   handleSubmit(event){
     	event.preventDefault();
     	
-    	let newReview = new Review(this.state.user, this.state.review, "04/18/2020", this.state.rating, "Jollof Rice", null);
+    	let newReview = new Review(this.state.user, this.state.review, "", this.state.rating, "Jollof Rice", null);
     	this.state.review = newReview;
     	
     	Socket.emit('new review', {

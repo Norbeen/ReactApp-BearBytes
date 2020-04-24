@@ -3,6 +3,7 @@ import os, flask, flask_socketio, flask_sqlalchemy,smtplib, json
 from google.oauth2 import id_token
 from google.auth.transport import requests
 import send_sms as send
+from datetime import date
 
 
 app = flask.Flask(__name__)
@@ -83,6 +84,9 @@ def on_new_review(data):
     # data['review']['foodTitle'] gets you the title of the food that was reviewed
     #ReviewObject.jsx file should show the atrributes of a review object
     reviews_list = []
+
+    today = date.today()
+    data['review']['date'] = today.strftime("%m/%d/%y")
     reviews_list.append(data['review'])
     #TODO: save that new review to the database
     socketio.emit('send review', {
