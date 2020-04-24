@@ -13,6 +13,17 @@ function Stars(props){
     		'rating': rate
     	});
     }
+    
+    const updateRate = (rate) =>{
+        if (rate == 1){
+            updateRating(0)
+            sendRating(0)
+        }else{
+            updateRating(rate)
+            sendRating(rate)
+        }
+    }
+    
     if (0<= rating <=5){
         for (var i = 0; i < rating; i++) {
             let current_count = count
@@ -20,8 +31,7 @@ function Stars(props){
                <input key={count} src="https://i.ibb.co/VHTxrsd/oie-Ic-LCQTSqb-Kj6.png" 
                alt="Rating" 
                onClick={() =>{
-                    sendRating(current_count+1)
-                    updateRating(current_count+1)
+                    updateRate(current_count+1)
                 }}
                style={{width:"50px", height:"100%"}}
                type="image"
