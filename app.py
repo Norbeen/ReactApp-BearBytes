@@ -79,6 +79,15 @@ def on_connected():
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)
+    #TODO: get all reviews for that specific food from the database and add it to review list
+    # data['review']['foodTitle'] gets you the title of the food that was reviewed
+    #ReviewObject.jsx file should show the atrributes of a review object
+    reviews_list = []
+    reviews_list.append(data['review'])
+    #TODO: save that new review to the database
+    socketio.emit('send review', {
+        'review': reviews_list
+    })
     
 @socketio.on('rating')
 def on_new_rating(data):

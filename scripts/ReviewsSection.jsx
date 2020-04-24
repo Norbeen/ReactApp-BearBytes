@@ -74,7 +74,7 @@ function ReviewCard(props){
         <div className="w3-row" >
             <h6 style={{color: "#F46311"}}>{props.reviewDate}</h6>
         </div>
-        <p style={{color: "#F46311", width: "80%", marginLeft:"auto", marginRight: "auto", paddingTop: "2%"}}>{props.reviewText}</p>
+        <p style={{color: "#F46311", width: "80%", marginLeft:"auto", marginRight: "auto", paddingTop: "2%", fontWeight: "bold", fontSize:"16px", paddingBottom:"10px"}}>{props.reviewText}</p>
         <Image image={props.image} />
     </div>
   </div>
@@ -85,9 +85,21 @@ export class ReviewsSection extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      menu_data: []
+      menu_data: [],
+      reviews_list: []
     };
+    
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
+  componentDidMount() {
+      Socket.on('send review',(data) => {
+      console.log('review received')
+      this.setState({
+        reviews_list: data['review']
+      })
+    })
+  }
+  
     render() {
         return (
     <div>
@@ -105,11 +117,13 @@ export class ReviewsSection extends React.Component {
               <input type="radio" name="critical" id="4" autoComplete="off"/> Most Critical
             </label>
         </div>
-        <div className="w3-row-padding w3-center">
-            <ReviewCard name="Meorge Gartin" pp="https://i.pinimg.com/736x/ab/63/54/ab63547c6ecef3a4d542156532f5266e.jpg" 
-            likesCount={10} dislikesCount={3} reviewDate="04/16/2020" reviewText="dis chop de sweet me ehh. spiced well-well, eh di pass me correct."
-            image="https://gbc-cdn-public-media.azureedge.net/img82551.768x512.jpg" rating={5} />
-        </div>
+        { this.state.reviews_list.map ( review =>
+            <div className="w3-row-padding w3-center">
+                <ReviewCard name={review.user.name} pp={review.user.profilePic}
+                likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
+                image={review.image} rating={review.rating} />
+            </div>
+          )}
     </div>)
     }
 }
