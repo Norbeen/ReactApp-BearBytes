@@ -24,6 +24,11 @@ function Stars(props){
         }
     }
     
+    Socket.on('send review',(data) => {
+      console.log('reset')
+      updateRating(0)
+    })
+    
     if (0<= rating <=5){
         for (var i = 0; i < rating; i++) {
             let current_count = count
