@@ -80,6 +80,13 @@ def on_connected():
 def on_new_review(data):
     print("Got an event for new message with data:", data)
     
+@socketio.on('rating')
+def on_new_rating(data):
+    print("Got an event for new message with data:", data)
+    socketio.emit('review rating' , {
+        'rating': data['rating']
+    })
+    
 
 # Declaring oogle Variables 
 

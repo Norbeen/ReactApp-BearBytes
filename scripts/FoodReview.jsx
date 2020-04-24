@@ -3,6 +3,7 @@ import { Socket } from './Socket';
 import { ReviewsSection } from './ReviewsSection'
 import { SendReview } from './SendReview'
 import { NavigationBar } from './Content'
+import { GoogleSignOut } from './GoogleSignOut';
 import { GoogleSignin } from './GoogleSignin';
 
 function Rating(props){

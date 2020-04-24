@@ -63,9 +63,9 @@ function ReviewCard(props){
           <h5 style={{color: "#F46311"}}>{props.name}</h5>
           <div className="w3-row">
             <img src="https://i.ibb.co/88Bp8w2/thumb-up-24px-1.png" alt="Rating" style={{width:"10%"}}/>
-            <h7 style={{color: "#F46311", paddingRight:"10px"}}>{props.likesCount}</h7>
+            <p style={{color: "#F46311", paddingRight:"10px"}}>{props.likesCount}</p>
             <img src="https://i.ibb.co/p4yrh6Z/thumb-down-24px-1.png" alt="Rating" style={{width:"10%"}}/>
-            <h7 style={{color: "#F46311"}}>{props.dislikesCount}</h7>
+            <p style={{color: "#F46311"}}>{props.dislikesCount}</p>
           </div>
             <Rating rating={props.rating} />
         </div>
