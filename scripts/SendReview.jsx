@@ -87,6 +87,9 @@ export class SendReview extends React.Component {
     }
     
   componentDidMount() {
+      this.setState({
+        loggedIn: false
+      })
       Socket.on('logged in',(data) => {
       console.log('user signed in')
       this.setState({
@@ -105,6 +108,10 @@ export class SendReview extends React.Component {
   }
   
   handleSubmit(event){
+      const {loggedIn} = this.state;
+      if (!loggedIn){
+        alert("you must be logged in to write a review")
+    }else{
     	event.preventDefault();
     	
     	let newReview = new Review(this.state.user, this.state.review, "", this.state.rating, "Jollof Rice", null);
@@ -119,14 +126,8 @@ export class SendReview extends React.Component {
     	});
         console.log('Sent a message to server!');
         console.log('User Review:', this.state.review);
-    }
+    }}
     
-  canBeClicked(){
-    console.log('logged:', this.state.loggedIn)
-    const {review} = this.state;
-    const {loggedIn} = this.state;
-    return ((review.length > 0) && (loggedIn == true));
-    }
   
   handleReviewMessage(event) {
         this.setState({review: event.target.value});
@@ -134,7 +135,6 @@ export class SendReview extends React.Component {
     }
     
     render() {
-        let isEnabled = this.canBeClicked;
         return (
     <div>
         <div className="w3-row">
@@ -142,7 +142,7 @@ export class SendReview extends React.Component {
         </div>
         <textarea name="" value = {this.state.review} className="review-form" placeholder="Type a review..." onChange = {this.handleReviewMessage}></textarea>
   		<div className="w3-row-padding">	
-  			<button disabled= {/*isEnabled8*/null} onClick={this.handleSubmit} className="review-button">Submit</button>
+  			<button onClick={this.handleSubmit} className="review-button">Submit</button>
 		</div>
     </div>)
     }
