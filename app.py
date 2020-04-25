@@ -77,6 +77,14 @@ def on_connected():
     
 #Receive the food reveiws from client
 
+@socketio.on('new like/disike')
+def on_new_like(data):
+    #TODO: do not emit but add this to the database and update the likes/dislike
+    print("Got an event for new message with data:", data)
+    likes = data["likes"]
+    dislikes = data["dislikes"]
+    foodTitle = data['foodTitle']
+
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)

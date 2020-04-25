@@ -63,16 +63,41 @@ function ReviewCard(props){
       console.log('previous likes updated')
       setLikesCount(likesCount - 1)
       setPreviousLike(false)
-    }else if(previousDislike){
+      
+      Socket.emit('new like/disike', {
+      "likes": likesCount-1,
+      "dislikes": dislikesCount,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
+    }
+    
+    else if(previousDislike){
       setLikesCount(likesCount + 1)
       setPreviousLike(true)
       setDislikesCount(dislikesCount -1)
       setPreviousDislike(false)
       console.log('dislike deducted')
-    }else if(!previousLike){
+      
+      Socket.emit('new like/disike', {
+      "likes": likesCount+1,
+      "dislikes": dislikesCount-1,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
+    }
+    
+    else if(!previousLike){
       console.log('non previous like updated')
       setLikesCount(likesCount + 1)
       setPreviousLike(true)
+      
+      Socket.emit('new like/disike', {
+      "likes": likesCount+1,
+      "dislikes": dislikesCount,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
     }
   }
   
@@ -81,18 +106,43 @@ function ReviewCard(props){
       console.log('previous likes updated')
       setDislikesCount(dislikesCount - 1)
       setPreviousDislike(false)
-    }else if(previousLike){
+      Socket.emit('new like/disike', {
+      "likes": likesCount,
+      "dislikes": dislikesCount-1,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
+    }
+    
+    else if(previousLike){
       setDislikesCount(dislikesCount + 1)
       setPreviousDislike(true)
       setLikesCount(likesCount -1)
       setPreviousLike(false)
       console.log('like deducted')
-    }else if(!previousDislike){
+      
+      Socket.emit('new like/disike', {
+      "likes": likesCount-1,
+      "dislikes": dislikesCount+1,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
+    }
+    
+    else if(!previousDislike){
       console.log('non previous dislike updated')
       setDislikesCount(dislikesCount + 1)
       setPreviousLike(true)
+      
+      Socket.emit('new like/disike', {
+      "likes": likesCount,
+      "dislikes": dislikesCount+1,
+      //TODO get current food title here
+      "foodTitle": "Jollof Rice"
+    })
     }
   }
+  
   
   return( 
   <div className="w3-third" style={{paddingTop:"2%"}}>
