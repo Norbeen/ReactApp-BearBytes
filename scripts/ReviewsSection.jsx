@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Socket } from './Socket';
+import { useState } from 'react';
 
 function Rating(props){
   if(props.rating == 0){
@@ -52,6 +53,47 @@ function Image(props){
 }
 
 function ReviewCard(props){
+  const [likesCount, setLikesCount] = useState(props.likesCount)
+  const [dislikesCount, setDislikesCount] = useState(props.dislikesCount)
+  const [previousLike, setPreviousLike] = useState(false)
+  const [previousDislike, setPreviousDislike] = useState(false)
+  
+  const updateLikes = () =>{
+    if(previousLike){
+      console.log('previous likes updated')
+      setLikesCount(likesCount - 1)
+      setPreviousLike(false)
+    }else if(previousDislike){
+      setLikesCount(likesCount + 1)
+      setPreviousLike(true)
+      setDislikesCount(dislikesCount -1)
+      setPreviousDislike(false)
+      console.log('dislike deducted')
+    }else if(!previousLike){
+      console.log('non previous like updated')
+      setLikesCount(likesCount + 1)
+      setPreviousLike(true)
+    }
+  }
+  
+  const updateDislikes = () =>{
+    if(previousDislike){
+      console.log('previous likes updated')
+      setDislikesCount(dislikesCount - 1)
+      setPreviousDislike(false)
+    }else if(previousLike){
+      setDislikesCount(dislikesCount + 1)
+      setPreviousDislike(true)
+      setLikesCount(likesCount -1)
+      setPreviousLike(false)
+      console.log('like deducted')
+    }else if(!previousDislike){
+      console.log('non previous dislike updated')
+      setDislikesCount(dislikesCount + 1)
+      setPreviousLike(true)
+    }
+  }
+  
   return( 
   <div className="w3-third" style={{paddingTop:"2%"}}>
     <div className="food-card">
@@ -62,17 +104,23 @@ function ReviewCard(props){
         <div className="w3-col" style={{width:"60%"}}>
           <h5 style={{color: "#F46311"}}>{props.name}</h5>
           <div className="w3-row">
-            <img src="https://i.ibb.co/88Bp8w2/thumb-up-24px-1.png" alt="Rating" style={{width:"10%"}}/>
-            <h7 style={{color: "#F46311", paddingRight:"10px"}}>{props.likesCount}</h7>
-            <img src="https://i.ibb.co/p4yrh6Z/thumb-down-24px-1.png" alt="Rating" style={{width:"10%"}}/>
-            <h7 style={{color: "#F46311"}}>{props.dislikesCount}</h7>
+            <h6 style={{color: "#F46311"}}>{props.reviewDate}</h6>
+            <input type="image" src="https://i.ibb.co/88Bp8w2/thumb-up-24px-1.png" 
+            alt="Rating" style={{width:"10%", paddingRight:"4px"}}
+            onClick={() => updateLikes()}
+            />
+            <h7 style={{color: "#F46311", paddingRight:"10px"}}>{likesCount}</h7>
+            <input type="image" src="https://i.ibb.co/p4yrh6Z/thumb-down-24px-1.png" 
+            alt="Rating" style={{width:"10%", paddingRight:"4px"}}
+            onClick={() => updateDislikes()}
+            />
+            <h7 style={{color: "#F46311"}}>{dislikesCount}</h7>
           </div>
-            <Rating rating={props.rating} />
         </div>
       </div>
       <div className="review-divider"/>
         <div className="w3-row" >
-            <h6 style={{color: "#F46311"}}>{props.reviewDate}</h6>
+            <Rating rating={props.rating} />
         </div>
         <p style={{color: "#F46311", width: "80%", marginLeft:"auto", marginRight: "auto", paddingTop: "2%", fontWeight: "bold", fontSize:"16px", paddingBottom:"10px"}}>{props.reviewText}</p>
         <Image image={props.image} />
