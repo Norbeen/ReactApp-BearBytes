@@ -136,6 +136,7 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { breakfast_items.map ( bf_item =>
             <FoodCard 
+            key={bf_item.bf_title}
              image={bf_item.bf_imageLink} title={bf_item.bf_title}
             // rating={bf_item.bf_averageRating}
             rating={3}
@@ -147,6 +148,7 @@ export class Content extends React.Component {
       <div className="w3-row-padding w3-center">
        { lunch_items.map ( lunch_item =>
             <FoodCard 
+            key={lunch_item.lunch_title}
              image={lunch_item.lunch_imageLink} title={lunch_item.lunch_title}
             //rating={lunch_item.lunch_averageRating}
             rating={5}
@@ -158,6 +160,7 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { dinner_items.map ( dinner_item =>
           <FoodCard 
+          key={dinner_item.din_title}
           image={dinner_item.din_imageLink} title={dinner_item.din_title} 
           //rating={dinner_item.din_averageRating}
           rating={4}

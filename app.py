@@ -88,17 +88,25 @@ def on_new_like(data):
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)
-    #TODO: get all reviews for that specific food from the database and add it to review list
+    #TODO (priority #1): get all reviews for that specific food from the database and add it to review list
     # data['review']['foodTitle'] gets you the title of the food that was reviewed
     #ReviewObject.jsx file should show the atrributes of a review object
-    reviews_list = []
+    #TODO (priority #3): create separate lists sorted by date, likes, stars and dislikes
+    
+    #negative_reviews_list = []
+    #popular_reviews_list = []
+    #positive_reviews_list = []
+    newest_reviews_list = []
 
     today = date.today()
     data['review']['date'] = today.strftime("%m/%d/%y")
-    reviews_list.append(data['review'])
-    #TODO: save that new review to the database
+    newest_reviews_list.append(data['review'])
+    #TODO (priority #2): save that new review to the database
     socketio.emit('send review', {
-        'review': reviews_list
+        'newest_reviews': newest_reviews_list,
+        'popular_reviews': newest_reviews_list,
+        'positive_reviews': newest_reviews_list,
+        'negative_reviews': newest_reviews_list,
     })
     
 @socketio.on('rating')
@@ -129,12 +137,9 @@ def google_information(token):
         
         # ***************** Declaring global variable for name and image extracted from google ********
         googleImage= idinfo['picture']
-        googleFirstName = idinfo['given_name']
         
         global googleName
         googleName = idinfo['name']
-        
-        
         
         global googleEmail
         googleEmail = idinfo['email']
@@ -144,7 +149,7 @@ def google_information(token):
     
         socketio.emit('logged in' , {
             'user':{ 
-                "name": googleFirstName,
+                "name": googleName,
                 "profilePic": googleImage
                 }
         })
