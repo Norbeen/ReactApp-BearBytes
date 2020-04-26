@@ -165,6 +165,14 @@ def is_valid_token(token):
             return True
         print('Invalid token')
         return False
+        
+#Check the disconnect status
+
+@socketio.on('disconnect')
+def on_disconnect(data):
+    socketio.emit('disconnecting', {
+        'disconnect status': True
+    })
 
 if __name__ == '__main__':
     socketio.run(
