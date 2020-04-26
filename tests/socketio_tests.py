@@ -52,7 +52,7 @@ class socketio_test(unittest.TestCase):
         self.assertEqual(from_server['name'], 'disconnecting')
         
         data = from_server['args'][0]
-        self.assertEqual(data['disconnect status'], 'disconnected')
+        self.assertEqual(data['disconnect status'], True)
         
         
 if __name__ == '__main__':
