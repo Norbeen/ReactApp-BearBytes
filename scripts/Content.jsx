@@ -79,7 +79,7 @@ function FoodCard(props){
   
   let emitToServer = () => {
     console.log("button works")
-    Socket.emit('rating', {
+    Socket.emit('', {
     		'test': "emitted!"
     	});
   }
