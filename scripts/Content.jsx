@@ -74,9 +74,18 @@ function Rating(props){
   return(<p style={{color: "#0B76F4", width: "80%", marginLeft:"auto", marginRight: "auto"}}>(Rating unavailable)</p>)
 
 }
+
 function FoodCard(props){
+  
+  let emitToServer = () => {
+    console.log("button works")
+    Socket.emit('rating', {
+    		'test': "emitted!"
+    	});
+  }
+  
   return( 
-  <a href="/review">
+   <a href="/review" onClick={() => {emitToServer()}} >
     <div className="w3-quarter" style={{paddingTop:"5%"}}>
       <div className="food-card">
       <img src={props.image} alt="Food Item" style={{width:"200px", height:"200px", paddingTop: "5%", objectFit: "cover"}}/>
@@ -87,7 +96,8 @@ function FoodCard(props){
     </div>
     </div>
   </a>
-  )}
+  )
+}
 
 const breakfastHeader = <h3 className="food-time-header">Breakfast 7am-9am</h3>
 const lunchHeader = <h3 className="food-time-header">Lunch 11am-2pm</h3>

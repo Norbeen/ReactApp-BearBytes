@@ -19,16 +19,6 @@ def hello():
 def hi():
     return flask.render_template('index.html')
 
-#Check the disconnect status
-
-@socketio.on('disconnect')
-def on_disconnect(data):
-    socketio.emit('disconnecting', {
-        'disconnect status': True
-    })
-
-
-
 @socketio.on('connect') 
 def on_connected():
     print("somebody connected")
