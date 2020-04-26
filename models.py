@@ -1,8 +1,8 @@
 import os, flask_sqlalchemy, app
 
 # app.app = app modules app variable
-app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
-#app.app.config['SQLALCHEMY_DATABASE_URI']  = 'postgresql://purple:purpleisawesome@localhost/postgres'
+# app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
+app.app.config['SQLALCHEMY_DATABASE_URI']  = 'postgresql://nabin:baltimore@localhost/postgres'
 db = flask_sqlalchemy.SQLAlchemy(app.app)
 
 # This class is for students posting reviews 
@@ -47,7 +47,7 @@ class menuItem(db.Model):
     def __init__(self, title, rating, calories, reviews, types, location, image): 
         self.Utitle = title
         self.Urating = rating
-        self.Ucalories = calories
+        self.Unutrition = calories
         self.Ureviews = reviews
         self.Utypes = types
         self.Ulocation = location
