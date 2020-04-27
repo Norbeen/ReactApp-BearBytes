@@ -54,6 +54,32 @@ class socketio_test(unittest.TestCase):
         data = from_server['args'][0]
         self.assertEqual(data['disconnect status'], True)
         
+    def test_on_connect_breakfast(self):
+        client = app.socketio.test_client(app.app)
+        response = client.get_received()
+       
+        self.assertEqual(len(response), 1)
+        from_server = response[0]
+        self.assertEqual(
+        from_server["name"],
+        "menu loaded"
+        )
+        breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
+        breakfast_list = []
+        for bf_item in breakfast_data:
+            breakfast_list.append({
+                'bf_title' : bf_item.Utitle,
+                'bf_averageRating' : bf_item.Urating,
+                'bf_calories' : bf_item.Unutrition,
+                'bf_reviews' : bf_item.Ureviews,
+                'bf_time' : bf_item.Utypes,
+                'bf_location' : bf_item.Ulocation,
+                'bf_imageLink' : bf_item.Uimage
+            })
+           
+        data = from_server["args"][0]
+        self.assertEqual(data["breakfast_items"], breakfast_list)
+        
         
 if __name__ == '__main__':
     unittest.main()
