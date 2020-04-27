@@ -80,6 +80,32 @@ class socketio_test(unittest.TestCase):
         data = from_server["args"][0]
         self.assertEqual(data["breakfast_items"], breakfast_list)
         
+    def test_on_connect_lunch(self):
+        client = app.socketio.test_client(app.app)
+        response = client.get_received()
+       
+        self.assertEqual(len(response), 1)
+        from_server = response[0]
+        self.assertEqual(
+        from_server["name"],
+        "menu loaded"
+        )
+        lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
+        lunch_list = []
+        for lunch_item in lunch_data:
+            lunch_list.append({
+                'lunch_title' : lunch_item.Utitle,
+                'lunch_averageRating' : lunch_item.Urating,
+                'lunch_calories' : lunch_item.Unutrition,
+                'lunch_reviews' : lunch_item.Ureviews,
+                'lunch_time' : lunch_item.Utypes,
+                'lunch_location' : lunch_item.Ulocation,
+                'lunch_imageLink' : lunch_item.Uimage
+            })
+           
+        data = from_server["args"][0]
+        self.assertEqual(data["lunch_items"], lunch_list)
+        
         
 if __name__ == '__main__':
     unittest.main()
