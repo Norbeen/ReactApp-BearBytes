@@ -65,19 +65,79 @@ def on_connected():
         'dinner_items' : dinner_list
     })
     
+# ******************************.  This part receives the like, dislikes, I made everything global to use for all methods ******************************
+    
+#Receive the food reveiws from client
+
+#declaring global variables for likes, dislikes and food title
+received_like =""
+received_dislike= ""
+received_foodTitle =""
+
+
+
 #Receive the food reveiws from client
 
 @socketio.on('new like/disike')
 def on_new_like(data):
-    #TODO: do not emit but add this to the database and update the likes/dislike
-    print("Got an event for new message with data:", data)
-    likes = data["likes"]
-    dislikes = data["dislikes"]
-    foodTitle = data['foodTitle']
+    
+    print("Got an event for like dislikes :", data)
+    
+    global received_like
+    received_like = data["likes"]
+    
+    global received_dislike 
+    received_dislike= data["dislikes"]
+    
+    #This is the title to be received from client
+    
+    
+    # global received_foodTitle
+    # # received_foodTitle = data['foodTitle']
+
+# ********************************* This part adds the comments and other stuff reviewPost database needs  ***************************************
+
 
 @socketio.on('new review')
 def on_new_review(data):
     print("Got an event for new message with data:", data)
+    
+#TODO (priority #1): get all reviews for that specific food from the database and add it to review list
+
+#This scoketio will fetch rating, category, comment and date
+
+    today = date.today()
+    data['review']['date'] = today.strftime("%m/%d/%y")
+    
+    received_rating = data['review']['rating']
+    print(received_rating)
+    received_comment = data['review']['body']
+    print(received_comment)
+    received_date = data['review']['date']
+    print(received_date)
+    
+#Lookup the database for category
+#The Utitle equals received_foodTitle from line 88 once it is fetched from client
+    fetch_data = models.menuItem.query.filter_by(Utitle='Pork Bacon').limit(1).all()
+
+    for item in fetch_data:
+        received_category = item.Utypes
+        print("$$$$$$$$$$$$$$$$")
+        print(received_category)
+        print("$$$$$$$$$$$$$$$$")
+    
+    add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date, received_foodTitle)
+    models.db.session.add(add_item)
+    models.db.session.commit()
+    models.db.session.close()
+    
+    
+    posted_data = models.reviewPost.query.filter_by(Utypes=received_foodTitle).all()
+    # updated_database = models.menuItem.query.filter_by(Utitle= item_name).all()
+    # for i in updated_database:
+    #     print(i)
+    # print(updated_database)
+    
     #TODO (priority #1): get all reviews for that specific food from the database and add it to review list
     # data['review']['foodTitle'] gets you the title of the food that was reviewed
     #ReviewObject.jsx file should show the atrributes of a review object
@@ -86,11 +146,22 @@ def on_new_review(data):
     #negative_reviews_list = []
     #popular_reviews_list = []
     #positive_reviews_list = []
+    
     newest_reviews_list = []
-
-    today = date.today()
-    data['review']['date'] = today.strftime("%m/%d/%y")
-    newest_reviews_list.append(data['review'])
+    for review in posted_data:
+        newest_reviews_list.append({
+        'comment' :review.Ucomment,
+        'rating' : review.Urating,
+        'category' : review.Ucategory,
+        'like' : review.Ulike,
+        'dislike' : review.Udislike,
+        'author' : review.Uauthor,
+        'image' : review.Udimage,
+        'date' : review.Udate,
+        'foodTitle' : review.UfoodTitle
+            })    
+    
+    # newest_reviews_list.append(data['review'])
     #TODO (priority #2): save that new review to the database
     socketio.emit('send review', {
         'newest_reviews': newest_reviews_list,
