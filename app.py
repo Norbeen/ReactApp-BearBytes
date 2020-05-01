@@ -70,10 +70,13 @@ def on_connected():
 #Receive the food reveiws from client
 
 #declaring global variables for likes, dislikes and food title
-received_like =""
-received_dislike= ""
-received_foodTitle =""
 
+received_foodTitle =""
+received_category =""
+received_comment =""
+received_rating= ""
+received_date = ""
+received_foodTitle = ""
 
 
 #Receive the food reveiws from client
@@ -82,12 +85,15 @@ received_foodTitle =""
 def on_new_like(data):
     
     print("Got an event for like dislikes :", data)
-    
-    global received_like
+
     received_like = data["likes"]
-    
-    global received_dislike 
     received_dislike= data["dislikes"]
+    
+    
+    add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date, received_foodTitle)
+    models.db.session.add(add_item)
+    models.db.session.commit()
+    models.db.session.close()
     
     #This is the title to be received from client
     
@@ -109,10 +115,13 @@ def on_new_review(data):
     today = date.today()
     data['review']['date'] = today.strftime("%m/%d/%y")
     
+    global received_rating
     received_rating = data['review']['rating']
     print(received_rating)
+    global received_comment
     received_comment = data['review']['body']
     print(received_comment)
+    global received_date
     received_date = data['review']['date']
     print(received_date)
     
@@ -121,18 +130,19 @@ def on_new_review(data):
     fetch_data = models.menuItem.query.filter_by(Utitle='Pork Bacon').limit(1).all()
 
     for item in fetch_data:
+        global received_category
         received_category = item.Utypes
         print("$$$$$$$$$$$$$$$$")
         print(received_category)
         print("$$$$$$$$$$$$$$$$")
     
-    add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date, received_foodTitle)
+    add_item = models.reviewPost(received_comment, received_rating, received_category, 0, 0, googleName, googleImage, received_date, received_foodTitle)
     models.db.session.add(add_item)
     models.db.session.commit()
     models.db.session.close()
     
     
-    posted_data = models.reviewPost.query.filter_by(Utypes=received_foodTitle).all()
+    posted_data = models.reviewPost.query.filter_by(Ucategory=received_foodTitle).all()
     # updated_database = models.menuItem.query.filter_by(Utitle= item_name).all()
     # for i in updated_database:
     #     print(i)
@@ -156,7 +166,7 @@ def on_new_review(data):
         'like' : review.Ulike,
         'dislike' : review.Udislike,
         'author' : review.Uauthor,
-        'image' : review.Udimage,
+        'image' : review.Uimage,
         'date' : review.Udate,
         'foodTitle' : review.UfoodTitle
             })    
