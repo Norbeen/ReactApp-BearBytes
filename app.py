@@ -132,17 +132,19 @@ def on_new_review(data):
     for item in fetch_data:
         global received_category
         received_category = item.Utypes
-        print("$$$$$$$$$$$$$$$$")
-        print(received_category)
-        print("$$$$$$$$$$$$$$$$")
+        
     
-    add_item = models.reviewPost(received_comment, received_rating, received_category, 0, 0, googleName, googleImage, received_date, received_foodTitle)
+    add_item = models.reviewPost(received_comment, received_rating, received_category, 0, 0, googleName, googleImage, received_date, 'Pork Bacon')
     models.db.session.add(add_item)
     models.db.session.commit()
     models.db.session.close()
     
     
-    posted_data = models.reviewPost.query.filter_by(Ucategory=received_foodTitle).all()
+    posted_data = models.reviewPost.query.filter_by(UfoodTitle='Pork Bacon').all()
+    print("$$$$$$$$$$$$$$$$")
+    print(posted_data)
+    print("$$$$$$$$$$$$$$$$")
+    
     # updated_database = models.menuItem.query.filter_by(Utitle= item_name).all()
     # for i in updated_database:
     #     print(i)
@@ -170,7 +172,7 @@ def on_new_review(data):
         'date' : review.Udate,
         'foodTitle' : review.UfoodTitle
             })    
-    
+    print(newest_reviews_list)
     # newest_reviews_list.append(data['review'])
     #TODO (priority #2): save that new review to the database
     socketio.emit('send review', {
