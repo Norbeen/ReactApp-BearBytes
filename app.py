@@ -43,6 +43,7 @@ def on_connected():
             'imageLink' : bf_item.Uimage,
             "id": bf_item.id
             }) 
+        
     for lunch_item in lunch_data:
         lunch_list.append({
             'title' : lunch_item.Utitle,
@@ -54,8 +55,9 @@ def on_connected():
             'imageLink' : lunch_item.Uimage,
             "id": lunch_item.id
             })
+        
     for dinner_item in dinner_data:
-            dinner_list.append({
+        dinner_list.append({
             'title' : dinner_item.Utitle,
             'averageRating' : dinner_item.Urating,
             'calories' : dinner_item.Unutrition,
@@ -65,6 +67,8 @@ def on_connected():
             'imageLink' : dinner_item.Uimage,
             "id": dinner_item.id
         })
+    
+    models.db.session.commit()
     
     print("dinner", dinner_list, "\n")
     print("lunch", lunch_list, "\n")
@@ -163,6 +167,21 @@ def on_new_review(data):
     socketio.emit('send review', {
             'review': review
         })
+        
+    # update average rating in Database
+    menu_item = models.menuItem.query.filter_by(id=menu_item_id).all()[0]
+    print(menu_item)
+    reviews_for_item = models.reviewPost.query.filter_by(UmenuItemId=menu_item_id).all()
+    rating_total = 0
+    total = len(reviews_for_item)
+    for review in reviews_for_item:
+        rating_total += review.Urating
+
+    menu_item.Urating = round(rating_total/total)
+    print("rating updated", menu_item.Urating)
+    models.db.session.add(menu_item)
+    models.db.session.commit()
+    models.db.session.close()
 
     
 
