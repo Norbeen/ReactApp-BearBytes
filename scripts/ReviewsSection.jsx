@@ -323,13 +323,13 @@ export class ReviewsSection extends React.Component {
               /> Most Critical
             </label>
         </div>
-        { this.state.current_order.map ( review =>
-            <div className="w3-row-padding w3-center">
-                <ReviewCard key={review.id} name={review.username} pp={review.profilePic}
-                likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
-                image={review.image} rating={review.rating} foodId={this.state.current_food_id} />
-            </div>
-          )}
+        <div className="w3-row-padding w3-center">
+          { this.state.current_order.map ( review =>
+                  <ReviewCard key={review.id} name={review.username} pp={review.profilePic}
+                  likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
+                  image={review.image} rating={review.rating} foodId={this.state.current_food_id} />
+            )}
+        </div>
     </div>)
   }
 }
