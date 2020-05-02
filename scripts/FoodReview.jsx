@@ -49,7 +49,7 @@ function FoodInformation(props){
   return(
     <div className="w3-row-padding w3-center">
             <div className="w3-half">
-              <img src="https://whereismyspoon.co/wp-content/uploads/2018/07/jollof-rice-2.jpg" alt="Food Item" style={{width:"400px", height:"400px", paddingTop: "5%", objectFit: "cover"}} />
+              <img src={props.image} alt="Food Item" style={{width:"400px", height:"400px", paddingTop: "5%", objectFit: "cover"}} />
             </div>
             <div className="w3-half" style={{paddingTop: "150px"}}>
               <h1 className="food-time-header">{props.title}</h1>
@@ -96,6 +96,8 @@ export class FoodReview extends React.Component {
       let title = this.state.menu_data.title
       let calories = this.state.menu_data.calories
       let rating = this.state.menu_data.rating
+      let image = this.state.menu_data.image
+      
         return (
     <div>
 		  <NavigationBar signIn={this.state.signIn} />
@@ -103,7 +105,8 @@ export class FoodReview extends React.Component {
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}
       <div style={{paddingTop: "40px"}}></div>
-      <FoodInformation title={title} nutri={calories} rating={rating} reviewCount={1}  />
+      <FoodInformation title={title} nutri={calories} rating={rating} reviewCount={1}
+      image={image}/>
       {reviewHeader}
       <SendReview />
   		<div style={{ paddingTop:"3%"}} />
