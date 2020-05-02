@@ -107,7 +107,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount,
       "dislikes": dislikesCount-1,
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
     
@@ -121,7 +121,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount-1,
       "dislikes": dislikesCount+1,
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
     
@@ -133,7 +133,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount,
       "dislikes": dislikesCount+1,
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
   }
