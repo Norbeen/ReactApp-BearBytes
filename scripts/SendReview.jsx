@@ -68,7 +68,8 @@ export class SendReview extends React.Component {
       review: "",
       user: null,
       loggedIn: false,
-      rating: 0
+      rating: 0,
+      current_food_id: ""
     };
     
     this.handleReviewMessage = this.handleReviewMessage.bind(this);
@@ -95,6 +96,12 @@ export class SendReview extends React.Component {
         rating: data['rating']
       })
     })
+    Socket.on('menu item',(data) => {
+        console.log('received menu data in send review')
+        this.setState({
+          current_food_id: data['menu_item']["id"]
+        });
+      })
   }
   
   handleSubmit(event){
@@ -104,7 +111,7 @@ export class SendReview extends React.Component {
     }else{
     	event.preventDefault();
     	
-    	let newReview = new Review(this.state.user, this.state.review, "", this.state.rating, "Jollof Rice", null);
+    	let newReview = new Review(this.state.user, this.state.review, "", this.state.rating, this.state.current_food_id, null);
     	this.state.review = newReview;
     	
     	Socket.emit('new review', {

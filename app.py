@@ -40,7 +40,8 @@ def on_connected():
             'reviews' : bf_item.Ureviews,
             'time' : bf_item.Utypes,
             'location' : bf_item.Ulocation,
-            'imageLink' : bf_item.Uimage
+            'imageLink' : bf_item.Uimage,
+            "id": bf_item.id
             }) 
     for lunch_item in lunch_data:
         lunch_list.append({
@@ -50,7 +51,8 @@ def on_connected():
             'reviews' : lunch_item.Ureviews,
             'time' : lunch_item.Utypes,
             'location' : lunch_item.Ulocation,
-            'imageLink' : lunch_item.Uimage
+            'imageLink' : lunch_item.Uimage,
+            "id": lunch_item.id
             })
     for dinner_item in dinner_data:
             dinner_list.append({
@@ -60,7 +62,8 @@ def on_connected():
             'reviews' : dinner_item.Ureviews,
             'time' : dinner_item.Utypes,
             'location' : dinner_item.Ulocation,
-            'imageLink' : dinner_item.Uimage
+            'imageLink' : dinner_item.Uimage,
+            "id": dinner_item.id
         })
     
     print("dinner", dinner_list, "\n")
@@ -88,11 +91,11 @@ def on_new_like(data):
     print("Got an event for new message with data:", data)
     likes = data["likes"]
     dislikes = data["dislikes"]
-    foodTitle = data['foodTitle']
+    foodId = data['foodId']
 
 @socketio.on('new review')
 def on_new_review(data):
-    print("Got an event for new message with data:", data)
+    print("Got an event for new review with data:", data)
     #TODO (priority #1): get all reviews for that specific food from the database and add it to review list
     # data['review']['foodTitle'] gets you the title of the food that was reviewed
     #ReviewObject.jsx file should show the atrributes of a review object

@@ -1,6 +1,6 @@
 import os, flask_sqlalchemy, app
 
-# app.app = app modules app variable
+## app.app = app modules app variable
 app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
 #app.app.config['SQLALCHEMY_DATABASE_URI']  = 'postgresql://purple:purpleisawesome@localhost/postgres'
 db = flask_sqlalchemy.SQLAlchemy(app.app)
@@ -10,7 +10,7 @@ class reviewPost(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     Ucomment = db.Column(db.String(300))
     Urating = db.Column(db.Integer)
-    Ucategory = db.Column(db.String(300))
+    UmenuItemId = db.Column(db.Integer)
     Ulike= db.Column(db.Integer)
     Udislike = db.Column(db.Integer)
     Uauthor = db.Column(db.String(300))
@@ -19,10 +19,10 @@ class reviewPost(db.Model):
     
     
     
-    def __init__(self, comment, rating, category, like, dislike, author, image, date): 
+    def __init__(self, comment, rating, menuItemId, like, dislike, author, image, date): 
         self.Ucomment = comment
         self.Urating = rating
-        self.Ucategory = category
+        self.UmenuItemId = menuItemId
         self.Ulike = like
         self.Udislike = dislike
         self.Uauthor = author
