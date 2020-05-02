@@ -105,7 +105,7 @@ def on_connected():
                 }) 
         
         newest_reviews_list = sorted(reviews_list, key = lambda i: i['id'],reverse=True) 
-        negative_reviews_list = sorted(reviews_list, key = lambda i: i['dislikes'],reverse=True) 
+        negative_reviews_list = sorted(reviews_list, key = lambda i: i['rating']) 
         popular_reviews_list = sorted(reviews_list, key = lambda i: i['rating'],reverse=True) 
         positive_reviews_list = sorted(reviews_list, key = lambda i: i['likes'],reverse=True)
         socketio.emit('send review list', {
