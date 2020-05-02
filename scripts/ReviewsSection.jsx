@@ -68,8 +68,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount-1,
       "dislikes": dislikesCount,
-      //TODO get current food title here
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
     
@@ -83,8 +82,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount+1,
       "dislikes": dislikesCount-1,
-      //TODO get current food title here
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
     
@@ -96,8 +94,7 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount+1,
       "dislikes": dislikesCount,
-      //TODO get current food title here
-      "foodId": props.foodId
+      "review_id": props.id
     })
     }
   }
@@ -110,7 +107,6 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount,
       "dislikes": dislikesCount-1,
-      //TODO get current food title here
       "foodId": props.foodId
     })
     }
@@ -125,7 +121,6 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount-1,
       "dislikes": dislikesCount+1,
-      //TODO get current food title here
       "foodId": props.foodId
     })
     }
@@ -138,7 +133,6 @@ function ReviewCard(props){
       Socket.emit('new like/disike', {
       "likes": likesCount,
       "dislikes": dislikesCount+1,
-      //TODO get current food title here
       "foodId": props.foodId
     })
     }
@@ -327,7 +321,7 @@ export class ReviewsSection extends React.Component {
           { this.state.current_order.map ( review =>
                   <ReviewCard key={review.id} name={review.username} pp={review.profilePic}
                   likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
-                  image={review.image} rating={review.rating} foodId={this.state.current_food_id} />
+                  image={review.image} rating={review.rating} id={review.id} />
             )}
         </div>
     </div>)

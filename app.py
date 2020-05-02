@@ -106,8 +106,8 @@ def on_connected():
         
         newest_reviews_list = sorted(reviews_list, key = lambda i: i['id'],reverse=True) 
         negative_reviews_list = sorted(reviews_list, key = lambda i: i['rating']) 
-        popular_reviews_list = sorted(reviews_list, key = lambda i: i['rating'],reverse=True) 
-        positive_reviews_list = sorted(reviews_list, key = lambda i: i['likes'],reverse=True)
+        popular_reviews_list = sorted(reviews_list, key = lambda i: i['likes'],reverse=True) 
+        positive_reviews_list = sorted(reviews_list, key = lambda i: i['rating'],reverse=True)
         socketio.emit('send review list', {
             'newest_reviews': newest_reviews_list,
             'popular_reviews': popular_reviews_list,
@@ -124,12 +124,12 @@ def on_new_like(data):
 
     received_like = data["likes"]
     received_dislike= data["dislikes"]
-    
-    
-    #add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date)
-    # models.db.session.add(add_item)
-    # models.db.session.commit()
-    # models.db.session.close()
+    review_id = data["review_id"]
+    review = models.reviewPost.query.filter_by(id=review_id).all()[0]
+    review.Ulike = received_like
+    review.Udislike = received_dislike
+    models.db.session.commit()
+    models.db.session.close()
     
 
 @socketio.on('new review')
