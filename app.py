@@ -74,6 +74,10 @@ def on_connected():
     print("lunch", lunch_list, "\n")
     print("breakfast", breakfast_list, "\n")
     
+    breakfast_list = sorted(breakfast_list, key = lambda i: i['id'])
+    lunch_list = sorted(lunch_list, key = lambda i: i['id']) 
+    dinner_list = sorted(dinner_list, key = lambda i: i['id']) 
+    
     socketio.emit('menu loaded' , {
         'breakfast_items': breakfast_list,
         'lunch_items' : lunch_list,
@@ -86,9 +90,9 @@ def on_connected():
         print("food details dict", foodDetailsDict)
         
         posted_data = models.reviewPost.query.filter_by(UmenuItemId=foodDetailsDict['id']).all()
-        newest_reviews_list = []
+        reviews_list = []
         for review in posted_data:
-            newest_reviews_list.append({
+            reviews_list.append({
             'body' :review.Ucomment,
             'rating' : review.Urating,
             'category' : review.UmenuItemId,
@@ -100,15 +104,15 @@ def on_connected():
             'id': review.id
                 }) 
         
-        newest_reviews_list.reverse()
-        #negative_reviews_list = []
-        #popular_reviews_list = []
-        #positive_reviews_list = []
+        newest_reviews_list = sorted(reviews_list, key = lambda i: i['id'],reverse=True) 
+        negative_reviews_list = sorted(reviews_list, key = lambda i: i['dislikes'],reverse=True) 
+        popular_reviews_list = sorted(reviews_list, key = lambda i: i['rating'],reverse=True) 
+        positive_reviews_list = sorted(reviews_list, key = lambda i: i['likes'],reverse=True)
         socketio.emit('send review list', {
             'newest_reviews': newest_reviews_list,
-            'popular_reviews': newest_reviews_list,
-            'positive_reviews': newest_reviews_list,
-            'negative_reviews': newest_reviews_list,
+            'popular_reviews': popular_reviews_list,
+            'positive_reviews': positive_reviews_list,
+            'negative_reviews': negative_reviews_list,
         })
         
         
