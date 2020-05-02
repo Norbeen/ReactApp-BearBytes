@@ -34,34 +34,38 @@ def on_connected():
     dinner_list = []
     for bf_item in breakfast_data:
         breakfast_list.append({
-            'bf_title' : bf_item.Utitle,
-            'bf_averageRating' : bf_item.Urating,
-            'bf_calories' : bf_item.Unutrition,
-            'bf_reviews' : bf_item.Ureviews,
-            'bf_time' : bf_item.Utypes,
-            'bf_location' : bf_item.Ulocation,
-            'bf_imageLink' : bf_item.Uimage
+            'title' : bf_item.Utitle,
+            'averageRating' : bf_item.Urating,
+            'calories' : bf_item.Unutrition,
+            'reviews' : bf_item.Ureviews,
+            'time' : bf_item.Utypes,
+            'location' : bf_item.Ulocation,
+            'imageLink' : bf_item.Uimage
             }) 
     for lunch_item in lunch_data:
         lunch_list.append({
-            'lunch_title' : lunch_item.Utitle,
-            'lunch_averageRating' : lunch_item.Urating,
-            'lunch_calories' : lunch_item.Unutrition,
-            'lunch_reviews' : lunch_item.Ureviews,
-            'lunch_time' : lunch_item.Utypes,
-            'lunch_location' : lunch_item.Ulocation,
-            'lunch_imageLink' : lunch_item.Uimage
+            'title' : lunch_item.Utitle,
+            'averageRating' : lunch_item.Urating,
+            'calories' : lunch_item.Unutrition,
+            'reviews' : lunch_item.Ureviews,
+            'time' : lunch_item.Utypes,
+            'location' : lunch_item.Ulocation,
+            'imageLink' : lunch_item.Uimage
             })
     for dinner_item in dinner_data:
             dinner_list.append({
-            'din_title' : dinner_item.Utitle,
-            'din_averageRating' : dinner_item.Urating,
-            'din_calories' : dinner_item.Unutrition,
-            'din_reviews' : dinner_item.Ureviews,
-            'din_time' : dinner_item.Utypes,
-            'din_location' : dinner_item.Ulocation,
-            'din_imageLink' : dinner_item.Uimage
+            'title' : dinner_item.Utitle,
+            'averageRating' : dinner_item.Urating,
+            'calories' : dinner_item.Unutrition,
+            'reviews' : dinner_item.Ureviews,
+            'time' : dinner_item.Utypes,
+            'location' : dinner_item.Ulocation,
+            'imageLink' : dinner_item.Uimage
         })
+    
+    print("dinner", dinner_list, "\n")
+    print("lunch", lunch_list, "\n")
+    print("breakfast", breakfast_list, "\n")
     
     socketio.emit('menu loaded' , {
         'breakfast_items': breakfast_list,

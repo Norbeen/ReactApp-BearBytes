@@ -81,7 +81,11 @@ function FoodCard(props){
     console.log("button works")
     Socket.emit('send to reviews', {
     		'food': {
-    		  "title":props.title
+    		  "title":props.title,
+    		  "image":props.image,
+    		  "id":props.key,
+    		  "rating":props.rating,
+    		  "calories":props.calories
     		}
     	});
   }
@@ -133,6 +137,10 @@ export class Content extends React.Component {
         let breakfast_items = this.state.breakfast_data;
         let lunch_items = this.state.lunch_data;
         let dinner_items = this.state.dinner_data;
+        
+        console.log("breakfast: ", breakfast_items)
+        console.log("lunch: ", lunch_items)
+        console.log("dinner: ", dinner_items)
 
         return (
         <div>
@@ -148,10 +156,9 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { breakfast_items.map ( bf_item =>
             <FoodCard 
-            key={bf_item.bf_title}
-             image={bf_item.bf_imageLink} title={bf_item.bf_title}
-            // rating={bf_item.bf_averageRating}
-            rating={3}
+            key={bf_item.id}
+             image={bf_item.imageLink} title={bf_item.title}
+            rating={bf_item.averageRating} calories={bf_item.calories}
             />
         )}
         </div>
@@ -160,10 +167,9 @@ export class Content extends React.Component {
       <div className="w3-row-padding w3-center">
        { lunch_items.map ( lunch_item =>
             <FoodCard 
-            key={lunch_item.lunch_title}
-             image={lunch_item.lunch_imageLink} title={lunch_item.lunch_title}
-            //rating={lunch_item.lunch_averageRating}
-            rating={5}
+            key={lunch_item.id}
+             image={lunch_item.imageLink} title={lunch_item.title}
+            rating={lunch_item.averageRating} calories={lunch_item.calories}
             />
         )}
         </div>
@@ -172,10 +178,9 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { dinner_items.map ( dinner_item =>
           <FoodCard 
-          key={dinner_item.din_title}
-          image={dinner_item.din_imageLink} title={dinner_item.din_title} 
-          //rating={dinner_item.din_averageRating}
-          rating={4}
+          key={dinner_item.id}
+          image={dinner_item.imageLink} title={dinner_item.title} 
+          rating={dinner_item.averageRating} calories={dinner_item.calories}
           />
         )}
         </div>
