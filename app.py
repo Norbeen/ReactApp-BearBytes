@@ -11,6 +11,9 @@ socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
+global foodDetailsDict
+foodDetailsDict = None
+
 @app.route('/')
 def hello():
     return flask.render_template('index.html')
@@ -22,6 +25,7 @@ def hi():
 @socketio.on('connect') 
 def on_connected():
     print("somebody connected")
+    global foodDetailsDict
     breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
     lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
     dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
@@ -30,40 +34,50 @@ def on_connected():
     dinner_list = []
     for bf_item in breakfast_data:
         breakfast_list.append({
-            'bf_title' : bf_item.Utitle,
-            'bf_averageRating' : bf_item.Urating,
-            'bf_calories' : bf_item.Unutrition,
-            'bf_reviews' : bf_item.Ureviews,
-            'bf_time' : bf_item.Utypes,
-            'bf_location' : bf_item.Ulocation,
-            'bf_imageLink' : bf_item.Uimage
+            'title' : bf_item.Utitle,
+            'averageRating' : bf_item.Urating,
+            'calories' : bf_item.Unutrition,
+            'reviews' : bf_item.Ureviews,
+            'time' : bf_item.Utypes,
+            'location' : bf_item.Ulocation,
+            'imageLink' : bf_item.Uimage
             }) 
     for lunch_item in lunch_data:
         lunch_list.append({
-            'lunch_title' : lunch_item.Utitle,
-            'lunch_averageRating' : lunch_item.Urating,
-            'lunch_calories' : lunch_item.Unutrition,
-            'lunch_reviews' : lunch_item.Ureviews,
-            'lunch_time' : lunch_item.Utypes,
-            'lunch_location' : lunch_item.Ulocation,
-            'lunch_imageLink' : lunch_item.Uimage
+            'title' : lunch_item.Utitle,
+            'averageRating' : lunch_item.Urating,
+            'calories' : lunch_item.Unutrition,
+            'reviews' : lunch_item.Ureviews,
+            'time' : lunch_item.Utypes,
+            'location' : lunch_item.Ulocation,
+            'imageLink' : lunch_item.Uimage
             })
     for dinner_item in dinner_data:
             dinner_list.append({
-            'din_title' : dinner_item.Utitle,
-            'din_averageRating' : dinner_item.Urating,
-            'din_calories' : dinner_item.Unutrition,
-            'din_reviews' : dinner_item.Ureviews,
-            'din_time' : dinner_item.Utypes,
-            'din_location' : dinner_item.Ulocation,
-            'din_imageLink' : dinner_item.Uimage
+            'title' : dinner_item.Utitle,
+            'averageRating' : dinner_item.Urating,
+            'calories' : dinner_item.Unutrition,
+            'reviews' : dinner_item.Ureviews,
+            'time' : dinner_item.Utypes,
+            'location' : dinner_item.Ulocation,
+            'imageLink' : dinner_item.Uimage
         })
+    
+    print("dinner", dinner_list, "\n")
+    print("lunch", lunch_list, "\n")
+    print("breakfast", breakfast_list, "\n")
     
     socketio.emit('menu loaded' , {
         'breakfast_items': breakfast_list,
         'lunch_items' : lunch_list,
         'dinner_items' : dinner_list
     })
+    if foodDetailsDict:
+        socketio.emit('menu item' , {
+        'menu_item': foodDetailsDict
+        })  
+        print("food details dict", foodDetailsDict)
+        
     
 # ******************************.  This part receives the like, dislikes, I made everything global to use for all methods ******************************
     
@@ -77,8 +91,6 @@ received_comment =""
 received_rating= ""
 received_date = ""
 received_foodTitle = ""
-
-
 #Receive the food reveiws from client
 
 @socketio.on('new like/disike')
@@ -188,7 +200,14 @@ def on_new_rating(data):
     socketio.emit('review rating' , {
         'rating': data['rating']
     })
-    
+ 
+@socketio.on('send to reviews')
+def on_new_menu_click(data):
+    global foodDetailsDict
+    foodDetailsDict = data['food']
+    print("Got an event for new message with data:", data)
+    print("update global variable", foodDetailsDict)
+
 
 # Declaring oogle Variables 
 
