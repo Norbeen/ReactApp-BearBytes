@@ -24,10 +24,10 @@ The following **required** user stories are complete:
 - [x] As a user, I should be able to see the menu for the day, so I can make an informed decision on where I should eat 
 - [x] As a user, I should be able to see ratings for menu items, so I can make an so I can rank what options I'd like to eat in case one food item is out
 - [x] As a user, I should be able to see comments for menu items, so I can make an informed decision on what I should eat 
-- [ ] As a user,  I should be able to post comments and ratings for menu items, so I can help other users make an informed decision on what they should eat  
-- [ ] As a user, I should be able to like/dislike comments for menu items, so I can cosign on previous comments and don’t have to write my own 
+- [x] As a user,  I should be able to post comments and ratings for menu items, so I can help other users make an informed decision on what they should eat  
+- [x] As a user, I should be able to like/dislike comments for menu items, so I can cosign on previous comments and don’t have to write my own 
 - [ ] As a user, I should be able to see the top rated foods for the day, so I can quickly see the best options 
-- [ ] As a user I can filter comments by likes, dislikes, or time posted so I can see a variety of comments.
+- [x] As a user I can filter comments by likes, dislikes, or time posted so I can see a variety of comments.
 
 ## Checkpoint 1
 ### The checkpoint 1 will constituent following implementations:
