@@ -79,8 +79,10 @@ function FoodCard(props){
   
   let emitToServer = () => {
     console.log("button works")
-    Socket.emit('', {
-    		'test': "emitted!"
+    Socket.emit('send to reviews', {
+    		'food': {
+    		  "title":props.title
+    		}
     	});
   }
   

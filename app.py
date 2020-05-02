@@ -11,6 +11,9 @@ socketio = flask_socketio.SocketIO(app=app, cors_allowed_origins='*')
 
 import models 
 
+global foodDetailsDict
+foodDetailsDict = None
+
 @app.route('/')
 def hello():
     return flask.render_template('index.html')
@@ -22,6 +25,7 @@ def hi():
 @socketio.on('connect') 
 def on_connected():
     print("somebody connected")
+    global foodDetailsDict
     breakfast_data = models.menuItem.query.filter_by(Utypes='breakfast').all()
     lunch_data = models.menuItem.query.filter_by(Utypes='lunch').all()
     dinner_data = models.menuItem.query.filter_by(Utypes='dinner').all()
@@ -65,6 +69,13 @@ def on_connected():
         'dinner_items' : dinner_list
     })
     
+    if foodDetailsDict:
+        socketio.emit('menu item' , {
+        'menu_item': foodDetailsDict
+        })  
+        print("food details dict", foodDetailsDict)
+        
+    
 #Receive the food reveiws from client
 
 @socketio.on('new like/disike')
@@ -105,7 +116,14 @@ def on_new_rating(data):
     socketio.emit('review rating' , {
         'rating': data['rating']
     })
-    
+ 
+@socketio.on('send to reviews')
+def on_new_menu_click(data):
+    global foodDetailsDict
+    foodDetailsDict = data['food']
+    print("Got an event for new message with data:", data)
+    print("update global variable", foodDetailsDict)
+
 
 # Declaring oogle Variables 
 
