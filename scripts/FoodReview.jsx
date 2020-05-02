@@ -72,6 +72,7 @@ export class FoodReview extends React.Component {
     super(props);
     this.state = {
       menu_data: [],
+      reviewCount: 0,
       signIn: <GoogleSignin />
     };
   }
@@ -87,6 +88,12 @@ export class FoodReview extends React.Component {
         console.log('received menu data')
         this.setState({
           menu_data: data['menu_item']
+        })
+      })
+      Socket.on('send review list',(data) => {
+        console.log("list length", data['newest_reviews'].length)
+        this.setState({
+          reviewCount: data['newest_reviews'].length
         })
       })
       
@@ -105,7 +112,7 @@ export class FoodReview extends React.Component {
       <div className="w3-main w3-content w3-padding" style={{maxWidth:'1200px;margin-top:100px'}}>
       {/*Creates padding so title starts under navigation bar*/}
       <div style={{paddingTop: "40px"}}></div>
-      <FoodInformation title={title} nutri={calories} rating={rating} reviewCount={1}
+      <FoodInformation title={title} nutri={calories} rating={rating} reviewCount={this.state.reviewCount}
       image={image}/>
       {reviewHeader}
       <SendReview />
