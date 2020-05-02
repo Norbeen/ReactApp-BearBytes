@@ -199,7 +199,7 @@ export class ReviewsSection extends React.Component {
     this.handleReviewOrder = this.handleReviewOrder.bind(this)
   }
   componentDidMount() {
-      Socket.on('send review',(data) => {
+      Socket.on('send review list',(data) => {
       console.log('review received')
       this.setState({
         newest_reviews_list: data['newest_reviews'],
@@ -207,6 +207,7 @@ export class ReviewsSection extends React.Component {
         positive_reviews_list: data['positive_reviews'],
         negative_reviews_list: data['negative_reviews']
       })
+      console.log('review received', this.state.newest_reviews_list)
       
       if (this.handleReviewOrder(this.state.order_track) == 'new'){
         this.setState({
@@ -241,6 +242,20 @@ export class ReviewsSection extends React.Component {
           current_food_id: data['menu_item']["id"]
         });
       })
+    Socket.on('send review',(data) => {
+      console.log('review received')
+      this.state.newest_reviews_list.unshift(data['review'])
+      this.state.popular_reviews_list.push(data['review'])
+      this.state.positive_reviews_list.push(data['review'])
+      this.state.negative_reviews_list.push(data['review'])
+        this.setState({
+        newest_reviews_list: this.state.newest_reviews_list,
+        popular_reviews_list: this.state.popular_reviews_list,
+        positive_reviews_list:  this.state.positive_reviews_list,
+        negative_reviews_list: this.state.negative_reviews_list
+      })
+      console.log('review received', this.state.newest_reviews_list)
+    })
   }
   
   handleReviewOrder(order){
@@ -283,6 +298,7 @@ export class ReviewsSection extends React.Component {
     }
   
     render() {
+      console.log("current order", this.state.current_order)
         return (
     <div>
         <div className="btn-group btn-group-toggle" data-toggle="buttons" style={{backgroundColor:"#F46311", width:"100%"}}>
@@ -309,11 +325,11 @@ export class ReviewsSection extends React.Component {
         </div>
         { this.state.current_order.map ( review =>
             <div className="w3-row-padding w3-center">
-                <ReviewCard key={review.rating} name={review.user.name} pp={review.user.profilePic}
+                <ReviewCard key={review.id} name={review.username} pp={review.profilePic}
                 likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
                 image={review.image} rating={review.rating} foodId={this.state.current_food_id} />
             </div>
           )}
     </div>)
-    }
+  }
 }
