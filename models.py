@@ -1,8 +1,8 @@
 import os, flask_sqlalchemy, app
 
-# app.app = app modules app variable
-# app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
-app.app.config['SQLALCHEMY_DATABASE_URI']  = 'postgresql://nabin:baltimore@localhost/postgres'
+## app.app = app modules app variable
+app.app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv('DATABASE_URL')
+#app.app.config['SQLALCHEMY_DATABASE_URI']  = 'postgresql://purple:purpleisawesome@localhost/postgres'
 db = flask_sqlalchemy.SQLAlchemy(app.app)
 
 # This class is for students posting reviews 
@@ -10,7 +10,7 @@ class reviewPost(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     Ucomment = db.Column(db.String(300))
     Urating = db.Column(db.Integer)
-    Ucategory = db.Column(db.String(300))
+    UmenuItemId = db.Column(db.Integer)
     Ulike= db.Column(db.Integer)
     Udislike = db.Column(db.Integer)
     Uauthor = db.Column(db.String(300))
@@ -20,16 +20,15 @@ class reviewPost(db.Model):
     
     
     
-    def __init__(self, comment, rating, category, like, dislike, author, image, date, foodTitle): 
+    def __init__(self, comment, rating, menuItemId, like, dislike, author, image, date): 
         self.Ucomment = comment
         self.Urating = rating
-        self.Ucategory = category
+        self.UmenuItemId = menuItemId
         self.Ulike = like
         self.Udislike = dislike
         self.Uauthor = author
         self.Udimage = image
         self.Udate = date
-        self.UfoodTitle = foodTitle
         
     def __repr__(self):
         # return '<Message user_name: %s>' % self.user_name

@@ -69,7 +69,7 @@ function ReviewCard(props){
       "likes": likesCount-1,
       "dislikes": dislikesCount,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
     
@@ -84,7 +84,7 @@ function ReviewCard(props){
       "likes": likesCount+1,
       "dislikes": dislikesCount-1,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
     
@@ -97,7 +97,7 @@ function ReviewCard(props){
       "likes": likesCount+1,
       "dislikes": dislikesCount,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
   }
@@ -111,7 +111,7 @@ function ReviewCard(props){
       "likes": likesCount,
       "dislikes": dislikesCount-1,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
     
@@ -126,7 +126,7 @@ function ReviewCard(props){
       "likes": likesCount-1,
       "dislikes": dislikesCount+1,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
     
@@ -139,7 +139,7 @@ function ReviewCard(props){
       "likes": likesCount,
       "dislikes": dislikesCount+1,
       //TODO get current food title here
-      "foodTitle": props.foodTitle
+      "foodId": props.foodId
     })
     }
   }
@@ -186,7 +186,7 @@ export class ReviewsSection extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      current_food_title: "Jollof Rice",
+      current_food_id: "",
       newest_reviews_list: [],
       popular_reviews_list: [],
       positive_reviews_list: [],
@@ -235,6 +235,12 @@ export class ReviewsSection extends React.Component {
     this.setState({
       current_order: this.state.newest_reviews_list
     })
+    Socket.on('menu item',(data) => {
+        console.log('received menu data in reviews', data["menu_item"])
+        this.setState({
+          current_food_id: data['menu_item']["id"]
+        });
+      })
   }
   
   handleReviewOrder(order){
@@ -305,7 +311,7 @@ export class ReviewsSection extends React.Component {
             <div className="w3-row-padding w3-center">
                 <ReviewCard key={review.rating} name={review.user.name} pp={review.user.profilePic}
                 likesCount={review.likes} dislikesCount={review.dislikes} reviewDate={review.date} reviewText={review.body}
-                image={review.image} rating={review.rating} foodTitle={this.state.current_food_title} />
+                image={review.image} rating={review.rating} foodId={this.state.current_food_id} />
             </div>
           )}
     </div>)

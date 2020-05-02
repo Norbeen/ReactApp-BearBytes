@@ -40,7 +40,8 @@ def on_connected():
             'reviews' : bf_item.Ureviews,
             'time' : bf_item.Utypes,
             'location' : bf_item.Ulocation,
-            'imageLink' : bf_item.Uimage
+            'imageLink' : bf_item.Uimage,
+            "id": bf_item.id
             }) 
     for lunch_item in lunch_data:
         lunch_list.append({
@@ -50,7 +51,8 @@ def on_connected():
             'reviews' : lunch_item.Ureviews,
             'time' : lunch_item.Utypes,
             'location' : lunch_item.Ulocation,
-            'imageLink' : lunch_item.Uimage
+            'imageLink' : lunch_item.Uimage,
+            "id": lunch_item.id
             })
     for dinner_item in dinner_data:
             dinner_list.append({
@@ -60,7 +62,8 @@ def on_connected():
             'reviews' : dinner_item.Ureviews,
             'time' : dinner_item.Utypes,
             'location' : dinner_item.Ulocation,
-            'imageLink' : dinner_item.Uimage
+            'imageLink' : dinner_item.Uimage,
+            "id": dinner_item.id
         })
     
     print("dinner", dinner_list, "\n")
@@ -91,6 +94,8 @@ received_comment =""
 received_rating= ""
 received_date = ""
 received_foodTitle = ""
+
+
 #Receive the food reveiws from client
 
 @socketio.on('new like/disike')
@@ -102,7 +107,7 @@ def on_new_like(data):
     received_dislike= data["dislikes"]
     
     
-    add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date, received_foodTitle)
+    add_item = models.reviewPost(received_comment, received_rating, received_category, received_like, received_dislike, googleName, googleImage, received_date)
     models.db.session.add(add_item)
     models.db.session.commit()
     models.db.session.close()
@@ -146,7 +151,7 @@ def on_new_review(data):
         received_category = item.Utypes
         
     
-    add_item = models.reviewPost(received_comment, received_rating, received_category, 0, 0, googleName, googleImage, received_date, 'Pork Bacon')
+    add_item = models.reviewPost(received_comment, received_rating, received_category, 0, 0, googleName, googleImage, received_date)
     models.db.session.add(add_item)
     models.db.session.commit()
     models.db.session.close()

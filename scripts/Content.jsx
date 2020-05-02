@@ -78,12 +78,12 @@ function Rating(props){
 function FoodCard(props){
   
   let emitToServer = () => {
-    console.log("button works")
+    console.log("button works", props.id)
     Socket.emit('send to reviews', {
     		'food': {
     		  "title":props.title,
     		  "image":props.image,
-    		  "id":props.key,
+    		  "id":props.id,
     		  "rating":props.rating,
     		  "calories":props.calories
     		}
@@ -137,10 +137,9 @@ export class Content extends React.Component {
         let breakfast_items = this.state.breakfast_data;
         let lunch_items = this.state.lunch_data;
         let dinner_items = this.state.dinner_data;
-        
+        let i = dinner_items[2]
         console.log("breakfast: ", breakfast_items)
         console.log("lunch: ", lunch_items)
-        console.log("dinner: ", dinner_items)
 
         return (
         <div>
@@ -156,7 +155,7 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { breakfast_items.map ( bf_item =>
             <FoodCard 
-            key={bf_item.id}
+            key={bf_item.id} id={bf_item.id}
              image={bf_item.imageLink} title={bf_item.title}
             rating={bf_item.averageRating} calories={bf_item.calories}
             />
@@ -167,7 +166,7 @@ export class Content extends React.Component {
       <div className="w3-row-padding w3-center">
        { lunch_items.map ( lunch_item =>
             <FoodCard 
-            key={lunch_item.id}
+            key={lunch_item.id} id={lunch_item.id}
              image={lunch_item.imageLink} title={lunch_item.title}
             rating={lunch_item.averageRating} calories={lunch_item.calories}
             />
@@ -178,7 +177,7 @@ export class Content extends React.Component {
         <div className="w3-row-padding w3-center">
         { dinner_items.map ( dinner_item =>
           <FoodCard 
-          key={dinner_item.id}
+          key={dinner_item.id} id={dinner_item.id}
           image={dinner_item.imageLink} title={dinner_item.title} 
           rating={dinner_item.averageRating} calories={dinner_item.calories}
           />
